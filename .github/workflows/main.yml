@@ -14,6 +14,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Debug workspace
+        run: |
+          echo "Workspace contents:"
+          ls -lR
+          echo "Dist directory contents:"
+          ls -lR ./dist
+
       - name: Upload files via SFTP
         uses: appleboy/scp-action@master
         with:
@@ -23,5 +36,5 @@ jobs:
           protocol: sftp
           port: 8009
           source: "./dist/*"
-          target: "/skin3" # 원격 서버 경로
-          overwrite: true # 기존 파일 덮어쓰기
+          target: "/skin3"
+          overwrite: true
