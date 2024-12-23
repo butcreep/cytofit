@@ -24,5 +24,4 @@ jobs:
           port: 8009
           source: "./dist/*" # 업로드할 로컬 파일 경로
           target: "/skin3" # 원격 서버 경로
-          protocol: "sftp" # 프로토콜 (SFTP 명시적으로 설정)
           overwrite: true # 기존 파일 덮어쓰기
