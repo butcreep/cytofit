@@ -1,8 +1,9 @@
+name: 🚀 Deploy to Cafe24 SFTP
+
 on:
   push:
-    branches: [master] # dev 브랜치에 푸시될 때만 실행
-
-name: 🚀 Deploy to Cafe24 SFTP
+    branches:
+      - master # 또는 배포를 트리거할 브랜치 이름
 
 jobs:
   deploy:
@@ -16,21 +17,12 @@ jobs:
       - name: Upload files via SFTP
         uses: appleboy/scp-action@master
         with:
-          server: ecimg-ftp-c01.cafe24img.com
+          host: ecimg-ftp-c01.cafe24img.com
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: sftp
           port: 8009
           source: "./dist/*" # 업로드할 로컬 파일 경로
           target: "/skin3" # 원격 서버 경로
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            **/.github*
-            **/.github*/**
-            *.json
-            *.ini
-            *.yml
-            *.scss
-            *.css.map
+          protocol: "sftp" # 프로토콜 (SFTP 명시적으로 설정)
+          overwrite: true # 기존 파일 덮어쓰기
