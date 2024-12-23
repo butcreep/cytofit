@@ -1,8 +1,24 @@
+name: 🚀 Deploy to Cafe24 SFTP
+
+on:
+  push:
+    branches:
+      - master # This will trigger the workflow when changes are pushed to the master branch
+
 jobs:
   deploy:
+    name: 🎉 Deploy via SFTP
+    runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
 
       - name: Upload files via SFTP
         uses: appleboy/scp-action@master
@@ -12,6 +28,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: sftp
           port: 8009
-          source: "./*" # 모든 파일 전송
+          source: "./*" # Make sure this path is correct according to your build output directory
           target: "/skin3"
           overwrite: true
