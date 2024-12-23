@@ -29,8 +29,8 @@
   margin: 0 4px;
 }
 .xans-product-additional .ec-base-tab.gFlex .menu li a {
-  font-size: 16px;
-  color: #000;
+  font-size: 15px;
+  color: #919191;
   text-align: center;
 }
 .xans-product-additional .ec-base-tab.gFlex .menu li.selected {
@@ -55,7 +55,7 @@
   margin: 0;
   background: transparent;
   border: 0;
-  color: #333;
+  color: #000;
   font-weight: 400;
 }
 

@@ -554,7 +554,7 @@
   transition: all 0.5s;
   z-index: 1;
 }
-.xans-product-detail .infoArea .xans-product-action .ec-base-button .first:after {
+/* .xans-product-detail .infoArea .xans-product-action .ec-base-button .first:after {
   content: "";
   width: 0%;
   height: 100%;
@@ -574,12 +574,12 @@
 .xans-product-detail .infoArea .xans-product-action .ec-base-button .first:hover:after {
   width: 100%;
   z-index: -1;
-}
+} */
 .xans-product-detail .infoArea .xans-product-action .ec-base-button .btnBlack {
-  width: 49.5%;
+  /* width: 49.5%;
   margin: 0 1% 0 0;
   display: inline-block;
-  float: left;
+  float: left; */
   height: 56px;
   line-height: 56px;
   font-size: 16px;
@@ -591,10 +591,10 @@
   box-sizing: border-box;
 }
 .xans-product-detail .infoArea .xans-product-action .ec-base-button .btnWhite {
-  width: 49.5%;
+  /* width: 49.5%;
   margin: 0 1% 0 0;
   display: inline-block;
-  float: left;
+  float: left; */
   height: 56px;
   line-height: 56px;
   font-size: 16px;

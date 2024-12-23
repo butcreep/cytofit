@@ -1117,15 +1117,16 @@
         </p>
 
         <div module="product_action">
-          <div class="ec-base-button">
-            <a href="#none" class="first {$buy_display|display}" onclick="{$action_buy}">
+          <div class="ec-base-button gColumn">
+            <a href="#none" class="btnBlack {$buy_display|display}" onclick="{$action_buy}">
               <span id="{$btn_buy_id}">바로 구매하기</span>
               <span id="{$btn_reserve_id}" class="{$btn_reserve_class|display}">예약주문</span>
               <span id="{$btn_regular_delivery_id}" class="{$btn_regular_delivery|display}">정기배송 신청하기</span>
             </a>
-            <a href="#none" class="btnWhite {$basket_display|display}" onclick="{$action_basket}">장바구니 담기</a>
+            <a href="#none" class="btnBlack {$basket_display|display}" onclick="{$action_basket}">장바구니 담기</a>
+
             <span class="btnBlack {$soldout_display|display}">SOLD OUT</span>
-            <a href="#none" onclick="{$action_wishlist}" class="btnWhite {$wishlist_display|display}">관심상품등록</a>
+            <!-- <a href="#none" onclick="{$action_wishlist}" class="btnWhite {$wishlist_display|display}">관심상품등록</a> -->
           </div>
 
           <!-- 네이버 체크아웃 구매 버튼 -->
