@@ -1,31 +1,8 @@
-name: 🚀 Deploy to Cafe24 SFTP
-
-on:
-  push:
-    branches:
-      - master # 또는 배포를 트리거할 브랜치 이름
-
 jobs:
   deploy:
-    name: 🎉 Deploy via SFTP
-    runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build project
-        run: npm run build
-
-      - name: Debug workspace
-        run: |
-          echo "Workspace contents:"
-          ls -lR
-          echo "Dist directory contents:"
-          ls -lR ./dist
 
       - name: Upload files via SFTP
         uses: appleboy/scp-action@master
@@ -35,6 +12,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: sftp
           port: 8009
-          source: "./dist/*"
+          source: "./*" # 모든 파일 전송
           target: "/skin3"
           overwrite: true
