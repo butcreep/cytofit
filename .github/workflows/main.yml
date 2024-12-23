@@ -6,22 +6,23 @@ name: 🚀 Deploy to Cafe24 SFTP
 
 jobs:
   deploy:
-    name: 🎉 Deploy to SFTP
+    name: 🎉 Deploy via SFTP
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Upload files to SFTP
-        uses: SamKirkland/FTP-Deploy-Action@4.3.3
+      - name: Upload files via SFTP
+        uses: appleboy/scp-action@master
         with:
           server: ecimg-ftp-c01.cafe24img.com
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: sftp
           port: 8009
-          server-dir: /skin3
+          source: "./dist/*" # 업로드할 로컬 파일 경로
+          target: "/skin3" # 원격 서버 경로
           exclude: |
             **/.git*
             **/.git*/**
