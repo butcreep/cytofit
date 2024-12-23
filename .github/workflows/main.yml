@@ -22,5 +22,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: sftp
           port: 8009
+          source: "./dist/*"
           target: "/skin3" # 원격 서버 경로
           overwrite: true # 기존 파일 덮어쓰기
