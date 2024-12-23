@@ -1,0 +1,165 @@
+@media screen and (max-width: 1480px) {
+  #quick {
+    right: 1%;
+  }
+  .fixed_btn {
+    right: 1%;
+  }
+
+  #header .topArea02 {
+    height: 110px;
+  }
+
+  .mainSlide .swiper-slide .txt {
+    bottom: 16%;
+  }
+  .mainSlide .swiper-slide .txt h3 {
+    font-size: 56px;
+  }
+  .mainSlide .swiper-slide .txt p {
+    margin: 16px 0 32px;
+  }
+  .mainSlide .swiper-slide .txt .btn {
+    font-size: 14px;
+    padding: 20px 28px;
+  }
+}
+
+@media screen and (max-width: 1380px) {
+  #quick {
+    display: none;
+  }
+  .fixed_btn .xans-layout-productrecent {
+    display: none !important;
+  }
+
+  #header .topArea02 {
+    height: 100px;
+  }
+  #header .topCate,
+  #menuFix {
+    height: 40px;
+  }
+  .topCategory #categoryMenu .menu-dp1 > li > a {
+    padding: 0 42px;
+    line-height: 40px;
+  }
+
+  .main_fullbg {
+    height: 400px;
+  }
+
+  .footer_cs .tel {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  #header .log_state .xans-layout-statelogon li,
+  #header .log_state .xans-layout-statelogoff li {
+    padding: 0 10px;
+  }
+  #header .log_state > ul li.cart {
+    padding: 0 8px;
+  }
+  #header .log_state > ul li .count {
+    right: -3px;
+  }
+
+  .topCategory #categoryMenu .menu-dp1 > li > a {
+    font-size: 13px;
+    padding: 0 30px;
+  }
+  .topCategory #categoryMenu .menu-dp2,
+  .topCategory #categoryMenu .menu-dp3,
+  .topCategory #categoryMenu .menu-dp4,
+  .topCategory #categoryMenu .bbs-dp1 {
+    width: 140px;
+  }
+
+  .mainSlide .swiper-slide .txt h3 {
+    font-size: 32px;
+  }
+  .mainSlide .swiper-slide .txt p {
+    font-size: 14px;
+    margin: 8px 0 16px;
+  }
+  .mainSlide .swiper-slide .txt .bar {
+    height: 32px;
+  }
+  .mainSlide .swiper-slide .txt .btn {
+    font-size: 14px;
+    padding: 16px 20px;
+  }
+  .mainSlide .swiper-slide .txt .btn .arrow {
+    width: 24px;
+  }
+
+  .mainBanner01 ul li .txt_area h3 {
+    font-size: 32px;
+  }
+  .mainBanner01 ul li .txt_area p {
+    font-size: 14px;
+  }
+
+  .mainBanner02 .left ul li .txt .bar {
+    height: 16px;
+    margin: 5px 0 5px 2px;
+  }
+  .mainBanner02 .left ul li .txt p {
+    font-size: 12px;
+  }
+  .mainBanner02 .right .mainNotice .noticeList ul li {
+    margin: 8px 0 0;
+  }
+  .mainBanner02 .right .mainNotice .subject a {
+    font-size: 13px;
+  }
+  .mainBanner02 .right .mainNotice .date {
+    font-size: 12px;
+  }
+
+  .main_fullbg {
+    height: 340px;
+  }
+  .main_fullbg .desc h3 {
+    font-size: 32px;
+  }
+  .main_fullbg .desc p {
+    font-size: 14px;
+    margin: 12px 0 24px;
+  }
+
+  .ec-base-product .title h2,
+  .ec-over-product .title h2,
+  .sub_title h2 {
+    font-size: 20px;
+  }
+  .ec-base-product .title h2 .sub,
+  .ec-over-product .title h2 .sub,
+  .sub_title .sub {
+    font-size: 13px;
+  }
+
+  .mainGallery .galleryList li .txt .subject {
+    font-size: 16px;
+  }
+
+  .footer_cs .tel {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 997px) {
+  .topCategory #categoryMenu .menu-dp1 > li > a {
+    padding: 0 20px;
+  }
+
+  .mainBanner02 .sub_title .sub {
+    display: none;
+  }
+
+  .ec-base-product .prdList {
+    min-width: 100%;
+  }
+}

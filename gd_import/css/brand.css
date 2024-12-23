@@ -1,0 +1,474 @@
+/* 안내 */
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  width: 100%;
+  height: calc(100% + 470px);
+  background: rgba(255, 255, 255, 0.9);
+}
+.brand_notice {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+  max-width: 720px;
+  width: 60%;
+  letter-spacing: -0.5px;
+  text-align: center;
+  background: #eee;
+  border-radius: 20px;
+  margin: 0 auto;
+  padding: 40px 80px;
+  box-sizing: border-box;
+}
+.brand_notice h2 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #222;
+}
+.brand_notice p {
+  font-size: 18px;
+  margin: 10px 0 0;
+}
+
+/* 상단 메뉴 */
+.brand_navi {
+  margin: 100px auto 64px;
+  width: 100%;
+}
+.brand_navi ul {
+  font-size: 0;
+  line-height: 0;
+  text-align: center;
+}
+.brand_navi ul li {
+  display: inline-block;
+  line-height: 15px;
+  vertical-align: top;
+}
+.brand_navi ul li a {
+  display: block;
+  min-width: 220px;
+  margin: 4px;
+  padding: 20px 30px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #888;
+  border: 1px solid #ececec;
+  box-sizing: border-box;
+}
+.brand_navi ul li.selected a {
+  color: #333;
+  border: 1px solid #333;
+}
+.brand_navi ul li a:hover {
+  color: #333;
+  border: 1px solid #333;
+  text-decoration: none;
+}
+
+/* 타이틀 */
+.brand_title {
+  margin: 100px auto;
+  text-align: center;
+}
+.brand_title h3 {
+  font-size: 48px;
+}
+.brand_title p {
+  font-size: 16px;
+  color: #b0b0b0;
+  margin: 10px 0 0;
+}
+
+/* 공통 */
+.brandWrap {
+  position: relative;
+}
+.brandWrap .brand_inner {
+  width: 92%;
+  max-width: 1280px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.brandWrap .brandBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 100px 0;
+}
+.brandWrap .brandBox.left .txtArea {
+  padding: 0 100px 0 10px;
+  text-align: left;
+}
+.brandWrap .brandBox.right .txtArea {
+  padding: 0 10px 0 100px;
+  text-align: right;
+}
+.brandWrap .brandBox.right .txtArea h3::after {
+  left: auto;
+  right: 0;
+}
+.brandWrap .brandBox .txtArea {
+  width: 100%;
+  max-width: 760px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.brandWrap .brandBox .txtArea h3 {
+  position: relative;
+  font-size: 26px;
+  color: #222;
+  line-height: 1.3em;
+  font-weight: 500;
+  letter-spacing: -1px;
+  padding: 0 0 20px;
+}
+.brandWrap .brandBox .txtArea h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 24px;
+  height: 1px;
+  background: #222;
+}
+.brandWrap .brandBox .txtArea h4 {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  margin: 0 0 10px;
+}
+.brandWrap .brandBox .txtArea h4 i {
+  font-size: 17px;
+  color: #fff;
+  text-align: center;
+  background: #000;
+  border-radius: 100%;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  margin: 0 0 0 10px;
+  vertical-align: text-bottom;
+}
+.brandWrap .brandBox .txtArea p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.8em;
+  letter-spacing: -0.5px;
+  margin: 20px 0;
+}
+.brandWrap .brandBox .imgArea {
+  width: 100%;
+  max-width: 520px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.brandWrap .brandBox .imgArea img {
+  width: 100%;
+}
+
+/* 고정 풀배너 */
+.brandWrap [class*="brand_fullbg"] {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  margin: 0 auto 100px;
+  background: rgba(68, 83, 86, 0.3);
+}
+.brandWrap [class*="brand_fullbg"] .inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 92%;
+  max-width: 1260px;
+  height: 100%;
+  margin: 0 auto;
+}
+.brandWrap [class*="brand_fullbg"]:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  z-index: -1;
+}
+.brandWrap [class*="brand_fullbg"] .desc {
+  font-size: 40px;
+  line-height: 1.5em;
+  color: #fff;
+  font-weight: 200;
+  text-align: center;
+}
+
+.brandWrap .brand_fullbg01::after {
+  background: url("//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/goodymall/kr/sub/brand1_img03.jpg") 0 0
+    fixed;
+  background-size: 100%;
+}
+.brandWrap .brand_fullbg02::after {
+  background: url("//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/goodymall/kr/sub/business1_img03.jpg") 0 0
+    fixed;
+  background-size: 100%;
+}
+
+/* 표 */
+.historyList {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.8em;
+  table-layout: fixed;
+  margin: 26px 0 0;
+}
+.historyList tr:first-child td {
+  border-top: 1px solid #444;
+}
+.historyList tr:last-child td {
+  border-bottom: 1px solid #444;
+}
+.historyList tr td {
+  padding: 15px 0;
+  border-top: 1px solid #e1e1e1;
+  border-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  word-wrap: break-word;
+}
+.historyList td:first-child {
+  font-weight: 600;
+}
+.historyList tr td:last-child {
+  text-align: left;
+  padding: 15px;
+}
+
+/* 지도 */
+.brandWrap .brandBox .mapArea {
+  max-width: 620px;
+  width: 100%;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+.brandWrap .brandBox .txtArea .address {
+  margin: 20px 0;
+}
+.brandWrap .brandBox .txtArea .address i {
+  margin: 0 10px 0 0;
+}
+.brandWrap .brandBox .txtArea .address p {
+  padding-left: 36px;
+  margin: 0;
+}
+
+/* 브랜드스토리리뉴얼 */
+#brand-story img {
+  width: 100%;
+}
+#brand-story .brand-story-main {
+  width: 100%;
+  height: 100vh;
+  background: transparent
+    url("//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/goodymall/brandstory/brand_01.png") 0% 0% no-repeat
+    padding-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  padding: 0;
+}
+#brand-story .brand-story-main .main-heading {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ffffff;
+}
+#brand-story .brand-story-main .title {
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 68px;
+  color: #ffffff;
+}
+#brand-story .brand-story-main .main-subtext {
+  position: absolute;
+  bottom: 75px;
+}
+#brand-story .brand-story-main .sub-description {
+  color: #ffffff;
+  margin-top: 15px;
+}
+#brand-story .title {
+  font-size: 45px;
+  margin: 0;
+  font-weight: 500;
+  color: #000;
+}
+#brand-story .description {
+  font-size: 25px;
+  line-height: 35px;
+  margin-top: 15px;
+}
+#brand-story .sub-description {
+  font-size: 23px;
+  line-height: 40px;
+  color: #8a8a8a;
+  letter-spacing: -0.92px;
+  margin-top: 50px;
+  font-weight: normal;
+}
+#brand-story .font-gray {
+  color: #8a8a8a !important;
+}
+#brand-story .shadow {
+  text-shadow: 0px 3px 6px #00000029;
+}
+#brand-story .brand-story-expertise {
+  display: flex;
+  align-items: center;
+  gap: 90px;
+}
+#brand-story .brand-story-expertise .description {
+  margin: 7px 0 0 0;
+}
+#brand-story .brand-story-expertise > div,
+#brand-story .solution-section > div {
+  width: 50%;
+}
+#brand-story .mt-50 {
+  margin-top: 50px !important;
+}
+#brand-story .solution-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f8f8;
+  padding: 150px 0;
+}
+#brand-story .solution-content {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 600px;
+  margin-left: 120px;
+}
+#brand-story .tabs {
+  display: flex;
+  gap: 10px;
+}
+#brand-story .tab-button {
+  padding: 13px 40px;
+  border: 2px solid #000;
+  border-radius: 30px;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+#brand-story .tab-button.active {
+  background: black;
+  color: white;
+}
+#brand-story .tab-button:hover {
+  background: #000;
+  color: #fff;
+}
+#brand-story .swiper-container {
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+}
+#brand-story .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#brand-story .hover-card {
+  position: relative;
+  width: 550px;
+  height: 600px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+#brand-story .hover-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+#brand-story .hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 15px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+#brand-story .hover-overlay .overlay-title {
+  font-size: 30px;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: white;
+}
+#brand-story .hover-overlay .overlay-description {
+  font-size: 22px;
+  line-height: 32px;
+  color: white;
+  letter-spacing: -0.88px;
+}
+#brand-story .hover-card:hover .hover-overlay {
+  opacity: 1;
+}
+#brand-story .top-image-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+#brand-story .top-image-section .content {
+  padding-left: 120px;
+}
+#brand-story .content,
+#brand-story .top-image-section .image-container {
+  width: 50%;
+}
+#brand-story .full-image-section {
+  position: relative;
+  width: 100%;
+  height: 720px;
+  background: url("//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/goodymall/brandstory/brand_04.png")
+    no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#brand-story .overlay {
+  text-align: center;
+}
+#brand-story .overlay .overlay-title {
+  font-size: 45px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #ffffff;
+  text-shadow: 0px 3px 6px #00000029;
+}
+#brand-story .overlay .overlay-description {
+  font-size: 23px;
+  line-height: 1.6;
+  color: #ffffff;
+  text-shadow: 0px 3px 6px #00000029;
+}

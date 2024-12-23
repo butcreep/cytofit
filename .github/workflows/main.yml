@@ -1,0 +1,40 @@
+on:
+  push:
+    branches: [dev] # dev 브랜치에 푸시될 때만 실행
+
+name: 🚀 Deploy to Cafe24 SFTP
+
+jobs:
+  web-deploy:
+    name: 🎉 Deploy to SFTP
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: 🚚 Checkout code
+        uses: actions/checkout@v3
+
+      - name: 📂 Deploy files to SFTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.3
+        with:
+          server: ecimg-ftp-c01.cafe24img.com
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: sftp
+          port: 8009
+          server-dir: /skin3
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/.github*
+            **/.github*/**
+            *.json
+            *.ini
+            *.yml
+            *.scss
+            *.css.map
+
+      - name: Send notification if deployment fails
+        if: failure()
+        run: echo "SFTP 배포 실패! 계정 만료 시간 확인 필요."

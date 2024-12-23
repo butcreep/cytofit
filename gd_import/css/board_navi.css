@@ -1,0 +1,40 @@
+.board_navi {
+  margin: 64px auto;
+  width: 92%;
+  max-width: 920px;
+}
+.board_navi ul {
+  font-size: 0;
+  line-height: 0;
+  text-align: center;
+}
+.board_navi ul li {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 14px;
+  vertical-align: top;
+}
+.board_navi ul li a {
+  display: block;
+  margin: 4px;
+  padding: 20px 8px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #888;
+  border: 1px solid #ececec;
+}
+.board_navi ul li a:hover {
+  color: #333;
+  border: 1px solid #333;
+  text-decoration: none;
+}
+
+.board_navi ul.grid3 li {
+  width: 33.333%;
+}
+.board_navi ul.grid4 li {
+  width: 25%;
+}
+.board_navi ul.grid5 li {
+  width: 20%;
+}

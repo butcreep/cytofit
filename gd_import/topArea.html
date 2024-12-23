@@ -1,0 +1,77 @@
+<div class="inner" style='max-width:100%;'>
+  <div class="topArea01">        
+      <!-- * 상단 우측 메뉴 * -->
+      <div class="right">
+          <!-- * 로그아웃 시 메뉴 * -->
+          <div class="log_state">
+              <ul module="Layout_stateLogoff">
+                  <li><a href="/member/login.html" class="log">로그인</a></li>
+                  <li><a href="/member/join.html">회원가입</a></li>
+                  <li><a href="/myshop/order/list.html">주문조회</a></li>
+                  <li><a href="/myshop/index.html">마이페이지</a></li>
+              </ul>    
+          </div>
+          <!-- * 로그인 시 메뉴 * -->
+          <div class="log_state">
+              <ul module="Layout_stateLogon">
+                  <li><a href="{$action_logout}" class="log">로그아웃</a></li>
+                  <li><a href="/member/modify.html">정보수정</a></li>
+                  <li><a href="/myshop/order/list.html">주문조회</a></li>
+                  <li><a href="/myshop/index.html">마이페이지</a></li>
+              </ul>    
+          </div>       
+          <!-- * 멀티샵 생성 시 위치 * -->
+          <div module="Layout_multishopList" class="list" style='display:none;'>
+              <!--@css(/css/module/layout/multishopList.css)-->
+              <button type="button" class="toggle"><span>{$current_language}</span></button>
+              <ul module="Layout_multishopListitem">
+                  <li class="{$selected_class}">
+                      <a href="//{$shop_domain}/">
+                          <img src="//img.cafe24.com/img/common/global/{$language}_32x24.png" alt="" />
+                          <span class="name">{$locale_language}</span>
+                      </a>
+                  </li>
+                  <li class="{$selected_class}">
+                      <a href="//{$shop_domain}/">
+                          <img src="//img.cafe24.com/img/common/global/{$language}_32x24.png" alt="" />
+                          <span class="name">{$locale_language}</span>
+                      </a>
+                  </li>
+              </ul>
+          </div>
+    <span module="Layout_orderBasketcount" class="cart"><a href="/order/basket.html"><img src="//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/asset/ico_c.png"/></i><span class="count">{$basket_count}</span></a></span>
+          <span class="search">
+              <img src="//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/asset/ico_s.png"/>
+              <i class="xi-close"></i>
+          </span>   
+      </div> <!-- right 끝 -->
+  </div> <!-- topArea01 끝 -->
+  
+  <!-- * 검색창영역 * -->
+  <div class="searchWrap">
+      <div module="Layout_SearchHeader">
+          <!--@css(/css/module/layout/searchHeader.css)--> <!-- * 검색창 영역의 css를 변경하실 수 있습니다 _ 컬러변경 * -->
+          <!--
+              $product_page=/product/detail.html
+              $category_page=/product/list.html
+          -->
+          <fieldset>
+              <legend>검색</legend>
+              {$form.keyword}<i class="xi-search" onclick="{$action_search_submit}"></i>
+          </fieldset>
+          <div class="popular" module="search_hotkeyword">
+              <p>
+                  <a href="{$hot_keyword_url}">{$hot_keyword_name}</a>
+                  <a href="{$hot_keyword_url}">{$hot_keyword_name}</a>
+              </p>
+          </div>
+      </div> 
+  </div> 
+  
+  <div class="topArea02">
+      <!-- * 로고 * -->
+      <h1 module="Layout_LogoTop">
+          <a href="/index.html"><img src="//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/asset/mainlogo.png" alt="{$mall_name}" /></a>
+      </h1>
+  </div> <!-- topArea02 끝 -->  
+</div>

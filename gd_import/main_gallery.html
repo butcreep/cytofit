@@ -1,0 +1,55 @@
+<div class="mainGallery" module="board_listpackage_8">
+  <div class="inner" data-aos="fade-up">
+    <!----------------------------------------------------------------------------------------------------------
+
+          module="board_list< 는 해당 게시판의 일반게시글을 끌어오는 소스입니다.	
+          module="board_notice < 로 변경하시면 해당 게시판에서 공지사항으로 체크된 게시글이 노출됩니다.
+          ※ notice로 변경하실 경우, 공지사항으로 체크된 게시글이 없다면 메인에 노출되지 않습니다.
+
+      ----------------------------------------------------------------------------------------------------------->
+    <div module="board_list_8" class="galleryList">
+      <div module="board_title_8" class="sub_title">
+        <h2>
+          <span>{$board_name}</span>
+        </h2>
+
+        <!-------------------------------------------------------------------------------------------------------
+              ::: 메인갤러리 우측 버튼 ▼ :::  <a href="#"> ← # 위치에 이동되길 원하는 링크를 삽입해주시기 바랍니다           
+              --------------------------------------------------------------------------------------------------------->
+        <a class="more_btn" href="/board/gallery/list.html?board_no=8"><i class="xi-plus"></i> 전체보기</a>
+      </div>
+      <!--
+              $count = 3
+              $login_page_url = /member/login.html
+              $deny_access_url = /index.html
+          -->
+      <ul>
+        <li>
+          <a href="{$link_board_detail}">
+            <div class="imgLink">
+              <img src="{$img_src}" onerror="this.src='//img.echosting.cafe24.com/thumb/198x198.gif'" alt="" />
+            </div>
+            <div class="txt {$block_target_class}" {$block_data_attr}>
+              <h3 class="subject {$block_target_class}" {$block_data_attr}>{$subject}</h3>
+              <p class="cont">{$content|striptag}</p>
+              <p class="writer">{$member_icon}{$writer} 님</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="{$link_board_detail}">
+            <div class="imgLink">
+              <img src="{$img_src}" onerror="this.src='//img.echosting.cafe24.com/thumb/198x198.gif'" alt="" />
+            </div>
+            <div class="txt {$block_target_class}" {$block_data_attr}>
+              <h3 class="subject {$block_target_class}" {$block_data_attr}>{$subject}</h3>
+              <p class="cont">{$content|striptag}</p>
+              <p class="writer">{$member_icon}{$writer} 님</p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- inner 끝 -->
+</div>
