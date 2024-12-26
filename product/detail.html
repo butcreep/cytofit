@@ -19,7 +19,7 @@
 <div class="headingArea">
   <!--h2>[{$product_code}] {$name}</h2-->
   <!-- <span class="delivery {$delvtype_display|display}">(해외배송 가능상품)</span> -->
-  <!--span class="icon">{$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon} {$product_icons} {$today_arrival_icon} {$pickup_icon} {$benefit_icons}</span-->
+
   <!-- 공급사 바로가기버튼 영역 -->
   <!-- <div class="supply {$supply_link_display|display}">
     <span>{$supply_top_logo}</span>
@@ -35,58 +35,25 @@
   <div class="detail-wrap">
     <div class="detail-left">
       <div class="detailArea">
-        <div class="imgArea" module="product_image">
-          <!--@js(/js/module/product/product_image.js)-->
-          <div class="keyImg">
-            <div class="thumbnail">
-              <a
-                href="/product/image_zoom2.html{$zoom_param}"
-                alt="{$product_code}"
-                onclick="window.open(this.href, 'image_zoom2', 'toolbar=no,scrollbars=auto,resizable=yes,width=450,height=693,left=0,top=0', this);return false;"
-              >
-                <img src="{$big_img}" alt="{$seo_alt_tag}" class="{$big_img_class} {$img_display|display}" /><span
-                  module="product_Imagestyle"
-                  ><span class="prdIcon {$icon_class_name}" style="background-image: url('{$icon_url}')"></span
-                ></span>
-              </a>
-              <div id="zoom_wrap"></div>
+        <!-- 썸네일 박스 -->
+        <div class="product_image_box">
+          <!--@css(/gd_import/css/product_image_box.css)-->
+          <!--@js(/gd_import/js/product_image_box.js)-->
+          <!-- 스와이프 썸네일 -->
+          <div class="product_image_pg" module="product_addimage">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">{$add_big_img}</div>
+              <div class="swiper-slide">{$add_big_img}</div>
             </div>
+            <!-- <div class="swiper-pagination "></div> 
+            <div class="swiper-scrollbar"></div>-->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+            <!-- <div class="pagination_more">이미지 전체보기</div>
+            <div class="pagination_close">전체보기 닫기</div> -->
           </div>
-          <div class="listImg" module="product_addimage">
-            <ul>
-              <li>{$add_img}</li>
-              <li>{$add_img}</li>
-            </ul>
-          </div>
-          <div class="control displaynone">
-            <a
-              href="/product/image_zoom2.html{$zoom_param}"
-              class="btnZoom"
-              onclick="window.open(this.href, 'image_zoom2', 'toolbar=no,scrollbars=auto,resizable=yes,width=560,height=710,left=0,top=0', this);return false;"
-              ><img src="//img.echosting.cafe24.com/skin/base/common/btn_icon_zoom.gif" alt="" /> 확대보기</a
-            >
-          </div>
-          <!--div class="color {$colorchip_display|display}">
-                    <div module="product_Colorchip">
-                        <span class="chips" style="background-color:{$color}"></span>
-                        <span class="chips" style="background-color:{$color}"></span>
-                    </div>
-                </div-->
-          <!--@import(/product/shoppQ/hashtag.html)-->
-          <!-- <div class="ec-base-button gColumn displaynone" module="product_action">
-            <a href="#none" class="btnNormal sizeM" onclick="{$action_recommend}">추천메일 보내기</a>
-            <a href="#none" class="btnNormal sizeM {$request_display|display}" onclick="{$action_request}"
-              >상품조르기</a
-            >
-            <a href="/board/inquiry/write.html{$inquiry_param}" class="btnNormal sizeM {$inquiry_display|display}"
-              >대량구매문의</a
-            >
-          </div> -->
-          <div class="likeButton {$disp_likeprd_class}">
-            <button type="button">
-              <span class="title">좋아요</span>{$disp_likeprd_icon}<span class="count">{$disp_likeprd_count}</span>
-            </button>
-          </div>
+          <!-- // 스와이프 썸네일 -->
         </div>
       </div>
       <!-- 공급사:판매사정보 -->
@@ -127,13 +94,19 @@
             <li><a href="#prdRelated">관련상품</a></li>
           </ul>
           <div class="infoBox">
-            <div class="box left">
-              <div class="cont">
-                <h3>[ 상품결제정보 ]</h3>
-                {$payment_info}
-              </div>
-              <div class="cont">
-                <h3>[ 배송정보 ]</h3>
+            <div class="cont open">
+              <h3 class="toggle">
+                [ 상품결제정보 ]
+                <span class="arrow">▼</span>
+              </h3>
+              <div class="content">{$payment_info}</div>
+            </div>
+            <div class="cont open">
+              <h3 class="toggle">
+                [ 배송정보 ]
+                <span class="arrow">▼</span>
+              </h3>
+              <div class="content">
                 <ul class="delivery">
                   <li>배송 방법 : {$shipping_method}</li>
                   <li>배송 지역 : {$shipping_area}</li>
@@ -142,16 +115,20 @@
                   <li>배송 안내 : {$shipping_info}</li>
                 </ul>
               </div>
-              <div class="cont">
-                <h3>[ 서비스문의 ]</h3>
-                {$service_info}
-              </div>
             </div>
-            <div class="box right">
-              <div class="cont">
-                <h3>[ 교환 및 반품정보 ]</h3>
-                {$exchange_info}
-              </div>
+            <div class="cont open">
+              <h3 class="toggle">
+                [ 서비스문의 ]
+                <span class="arrow">▼</span>
+              </h3>
+              <div class="content">{$service_info}</div>
+            </div>
+            <div class="cont open">
+              <h3 class="toggle">
+                [ 교환 및 반품정보 ]
+                <span class="arrow">▼</span>
+              </h3>
+              <div class="content">{$exchange_info}</div>
             </div>
           </div>
         </div>
@@ -394,7 +371,79 @@
     </div>
     <div class="detail-right">
       <div class="infoArea">
+        <div class="icon">
+          {$soldout_icon} {$stock_icon} {$recommend_icon} {$new_icon} {$product_icons} {$today_arrival_icon}
+          {$pickup_icon} {$benefit_icons}
+        </div>
+        <div class="headingArea">
+          <h1>{$name}</h1>
+          <div class="supply displaynone">></div>
+          <span class="delivery displaynone"></span>
+          <div class="summary_desc_css"></div>
+          <div class="simple_desc_css"></div>
+
+          <div class="productArea">
+            <div class="prod_price">
+              <div class="product_custom_css"></div>
+              <div class="discount_rate"></div>
+              <div class="product_price_css"></div>
+            </div>
+            <div class="prod_coupon">
+              <a href="javascript:;">쿠폰 받기<img src="/skin_img/icon_download_wt.svg" alt="" /></a>
+            </div>
+            <div class="coupon_modal modal" id="couponModalContainer">
+              <div class="xans-element- xans-coupon xans-coupon-productdetailajax coupon_layer">
+                <!--
+                  $coupon_down_result_url = /coupon/coupon_down_result.html
+                -->
+                <div class="coupon_title">쿠폰받기</div>
+                <ul class="coupon_list">
+                  <li class="xans-record-">
+                    <div class="coupon">
+                      <div class="detail">
+                        <p class="discount"><span>1000원 할인</span></p>
+                        <p class="name">할인쿠폰</p>
+                        <p class="period">2024-10-24 ~ 2029-10-31</p>
+                      </div>
+                      <div class="button">
+                        <a href="">쿠폰<br />다운받기</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="xans-record-">
+                    <div class="coupon">
+                      <div class="detail">
+                        <p class="discount"><span>2000원 할인</span></p>
+                        <p class="name">기간할인</p>
+                        <p class="period">2024-10-24 ~ 2029-10-31</p>
+                      </div>
+                      <div class="button">
+                        <a href="">쿠폰<br />다운받기</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="xans-record-">
+                    <div class="coupon">
+                      <div class="detail">
+                        <p class="discount"><span>3000원 할인</span></p>
+                        <p class="name">감사 할인</p>
+                        <p class="period">2024-10-24 ~ 2029-10-31</p>
+                      </div>
+                      <div class="button">
+                        <a href="">쿠폰<br />다운받기</a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div class="all_coupondown">
+                  <a href="#none" id="btn_all_coupondown" class="btnSubmit sizeL">쿠폰 한번에 받기</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div module="product_detaildesign">
+          <!--@js(/gd_import/js/product_detaildesign.js)-->
           <!--
                     출력 갯수 지정 변수, 없으면 설정된 전체가 나옵니다.
                     count = 10

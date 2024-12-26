@@ -1,12 +1,19 @@
-<header class="header" data-theme="light">
+<!--@import(/gd_import/topBanner.html)-->
+<!--@js(/gd_import/js/header.js)-->
+
+<header id="header" data-theme="light">
   <div class="header-container">
     <!-- Left Navigation -->
     <div class="header-nav">
       <ul>
-        <li><a href="https://cytofit.kr/sub/brand04.html">Brand</a></li>
-        <li><a href="https://cytofit.kr/product/list.html?cate_no=24">Shop</a></li>
-        <li><a href="https://cytofit.kr/board/review/list2.html?board_no=4">Review</a></li>
-        <li><a href="https://cytofit.kr/board/index.html">Community</a></li>
+        <li><a href="/sub/brand04.html">Brand</a></li>
+        <li>
+          <a href="/product/list.html?cate_no=24">Shop</a>
+        </li>
+        <li>
+          <a href="/board/review/list2.html?board_no=4">Review</a>
+        </li>
+        <li><a href="/board/index.html">Community</a></li>
       </ul>
     </div>
 
@@ -26,175 +33,43 @@
     <!-- Logoff State -->
     <div module="Layout_stateLogoff">
       <div class="header-icons-logoff">
-        <div class="search-icon">
-          <div>
-            <img
-              class="icon"
-              src="//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/asset/icons/search.svg"
-              alt="검색"
-            />
-          </div>
-        </div>
-        <a href="/myshop/index.html" class="mypage">
-          <div>
-            <img
-              class="icon"
-              src="//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/asset/icons/login.svg"
-              alt="마이페이지"
-            />
-          </div>
-        </a>
-        <a href="/order/basket.html" class="cart">
-          <div>
-            <img
-              class="icon"
-              src="//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/asset/icons/shop.svg"
-              alt="장바구니"
-            />
-          </div>
-        </a>
+        <div class="search icon" alt="검색"><i class="xi-close"></i></div>
+        <a href="/myshop/index.html" class="mypage icon" alt="마이페이지"></a>
+        <a href="/order/basket.html" class="cart icon" alt="장바구니"></a>
       </div>
     </div>
+
     <!-- Logon State -->
     <div module="Layout_stateLogon">
       <div class="header-icons-logon">
-        <div class="search-icon">
-          <div>
-            <img
-              class="icon"
-              src="//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/asset/icons/search.svg"
-              alt="검색"
-            />
-          </div>
+        <div class="search icon" alt="검색"><i class="xi-close"></i></div>
+        <a href="/myshop/index.html" class="mypage icon" alt="마이페이지"></a>
+        <a module="Layout_orderBasketcount" href="/order/basket.html" class="cart icon">
+          <div class="count">{$basket_count}</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- * 검색창영역 * -->
+    <div class="searchWrap">
+      <div module="Layout_SearchHeader">
+        <!--@css(/css/module/layout/searchHeader.css)-->
+        <!-- * 검색창 영역의 css를 변경하실 수 있습니다 _ 컬러변경 * -->
+        <!--
+                $product_page=/product/detail.html
+                $category_page=/product/list.html
+            -->
+        <fieldset>
+          <legend>검색</legend>
+          {$form.keyword}<i class="xi-search" onclick="{$action_search_submit}"></i>
+        </fieldset>
+        <div class="popular" module="search_hotkeyword">
+          <p>
+            <a href="{$hot_keyword_url}">{$hot_keyword_name}</a>
+            <a href="{$hot_keyword_url}">{$hot_keyword_name}</a>
+          </p>
         </div>
-        <a href="/myshop/index.html" class="mypage">
-          <div>
-            <img
-              class="icon"
-              src="//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/asset/icons/login.svg"
-              alt="마이페이지"
-            />
-          </div>
-        </a>
-        <a href="/order/basket.html" class="cart">
-          <div>
-            <img
-              class="icon"
-              src="//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/asset/icons/shop.svg"
-              alt="장바구니"
-            />
-          </div>
-          <div><span class="count">{$basket_count}</span></div>
-        </a>
       </div>
     </div>
   </div>
 </header>
-
-<style>
-  /* header */
-  :root {
-    --font-color: #000;
-  }
-
-  [data-theme="dark"] {
-    --font-color: #fff;
-  }
-
-  /* 헤더 고정 및 투명 배경 */
-  .header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 105px;
-
-    z-index: 1000; /* 다른 요소 위로 오도록 설정 */
-    transition: background 0.3s ease, backdrop-filter 0.3s ease;
-  }
-
-  /* 헤더 hover 효과 */
-  .header:hover {
-    background: rgba(255, 255, 255, 0); /* hover 시 배경 진해짐 */
-    backdrop-filter: blur(30px); /* 블러 유지 */
-    -webkit-backdrop-filter: blur(30px);
-  }
-
-  .header-container {
-    max-width: 1525px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    position: relative;
-  }
-  .header-logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  .header-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 25px;
-  }
-
-  .header-nav ul li a {
-    text-decoration: none;
-    color: var(--font-color);
-    font-size: 16px;
-    font-weight: 500;
-  }
-
-  .header-logo a img {
-    max-width: 120px;
-  }
-
-  [class*="header-icons"] {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-  }
-
-  [class*="header-icons"] a {
-    display: flex;
-    align-items: center;
-    position: relative;
-  }
-
-  [class*="header-icons"] img.icon {
-    width: 20px;
-    height: 20px;
-
-    filter: invert(100%);
-  }
-  .header-logo a img {
-    filter: invert(100%);
-  }
-  [data-theme="dark"] .header-logo a img {
-    filter: invert(0%);
-  }
-  [data-theme="dark"] [class*="header-icons"] img.icon {
-    filter: invert(0%);
-  }
-
-  [class*="header-icons"] .cart .count {
-    position: absolute;
-    top: -5px;
-    right: -10px;
-    background-color: #000;
-    color: #ffffff;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 2px 5px;
-    border-radius: 50%;
-  }
-
-  .search-icon {
-    cursor: pointer;
-  }
-</style>

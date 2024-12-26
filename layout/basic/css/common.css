@@ -34,6 +34,9 @@ img {
   margin: 0;
   padding: 0;
 }
+* {
+  font-family: var(--font-pretendard);
+}
 html {
   width: 100%;
   height: 100%;
@@ -41,7 +44,8 @@ html {
 }
 body,
 code {
-  font: 0.75em "Montserrat", "Noto Sans KR", Verdana, Dotum, AppleGothic, sans-serif;
+  font-family: var(--font-pretendard);
+  /* font: 0.75em "Montserrat", "Noto Sans KR", Verdana, Dotum, AppleGothic, sans-serif; */
   color: #353535;
   background: #fff;
 }
@@ -86,6 +90,7 @@ hr.layout {
 a {
   text-decoration: none;
   color: #000;
+  font: var(--font-pretendard);
 }
 a:hover {
   text-decoration: none;
@@ -227,5 +232,12 @@ div.layerProgress {
   opacity: 0.8;
   filter: alpha(opacity=80);
 }
-
+:root {
+  --font-color: #000;
+  --font-pretendard: "Pretendard", Verdana, "Malgun Gothic", Dotum, AppleGothic, "Sans-serif";
+  --font-poppins: "Poppins", serif;
+}
+[data-theme="dark"] {
+  --font-color: #fff;
+}
 /* **************************** 필수 CSS 수정 및 삭제 불가 **************************** */

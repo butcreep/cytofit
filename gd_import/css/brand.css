@@ -293,9 +293,10 @@
 }
 #brand-story .brand-story-main .title {
   font-weight: 500;
-  font-size: 45px;
-  line-height: 68px;
+  font-size: 38px;
+  line-height: 57px;
   color: #ffffff;
+  font-family: var(--font-poppins);
 }
 #brand-story .brand-story-main .main-subtext {
   position: absolute;
@@ -306,23 +307,26 @@
   margin-top: 15px;
 }
 #brand-story .title {
-  font-size: 45px;
+  font-size: 38px;
   margin: 0;
   font-weight: 500;
   color: #000;
+  font-family: var(--font-poppins);
 }
 #brand-story .description {
-  font-size: 25px;
+  font-size: 20px;
   line-height: 35px;
   margin-top: 15px;
+  font-weight: 300;
 }
 #brand-story .sub-description {
-  font-size: 23px;
-  line-height: 40px;
+  font-size: 20px;
+  line-height: 30px;
   color: #8a8a8a;
   letter-spacing: -0.92px;
   margin-top: 50px;
   font-weight: normal;
+  font-weight: 300;
 }
 #brand-story .font-gray {
   color: #8a8a8a !important;
@@ -338,101 +342,13 @@
 #brand-story .brand-story-expertise .description {
   margin: 7px 0 0 0;
 }
-#brand-story .brand-story-expertise > div,
-#brand-story .solution-section > div {
+#brand-story .brand-story-expertise > div {
   width: 50%;
 }
 #brand-story .mt-50 {
   margin-top: 50px !important;
 }
-#brand-story .solution-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #f8f8f8;
-  padding: 150px 0;
-}
-#brand-story .solution-content {
-  width: 50%;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  height: 600px;
-  margin-left: 120px;
-}
-#brand-story .tabs {
-  display: flex;
-  gap: 10px;
-}
-#brand-story .tab-button {
-  padding: 13px 40px;
-  border: 2px solid #000;
-  border-radius: 30px;
-  background: none;
-  cursor: pointer;
-  font-size: 16px;
-  transition: all 0.3s ease;
-}
-#brand-story .tab-button.active {
-  background: black;
-  color: white;
-}
-#brand-story .tab-button:hover {
-  background: #000;
-  color: #fff;
-}
-#brand-story .swiper-container {
-  width: 50%;
-  position: relative;
-  overflow: hidden;
-}
-#brand-story .swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#brand-story .hover-card {
-  position: relative;
-  width: 550px;
-  height: 600px;
-  border-radius: 15px;
-  overflow: hidden;
-}
-#brand-story .hover-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 15px;
-}
-#brand-story .hover-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  border-radius: 15px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-#brand-story .hover-overlay .overlay-title {
-  font-size: 30px;
-  margin-bottom: 15px;
-  font-weight: bold;
-  color: white;
-}
-#brand-story .hover-overlay .overlay-description {
-  font-size: 22px;
-  line-height: 32px;
-  color: white;
-  letter-spacing: -0.88px;
-}
-#brand-story .hover-card:hover .hover-overlay {
-  opacity: 1;
-}
+
 #brand-story .top-image-section {
   display: flex;
   justify-content: space-between;
@@ -465,6 +381,7 @@
   margin-bottom: 10px;
   color: #ffffff;
   text-shadow: 0px 3px 6px #00000029;
+  font-family: var(--font-poppins);
 }
 #brand-story .overlay .overlay-description {
   font-size: 23px;

@@ -1,6 +1,6 @@
 /* 메인 진열 - 마우스오버진열 */
 .ec-over-product .xans-product-listitem .display상품요약정보 {
-  margin: 8px auto 4px;
+  margin: 15px auto 28px;
 }
 .ec-over-product .xans-product-listitem .display상품.요약설명 {
   margin: 8px auto 4px;
@@ -35,25 +35,26 @@
 .ec-over-product {
   margin: 100px auto;
 }
-.ec-over-product:not(.xans-product-listrecommend, .xans-product-listnew) > .title {
+.ec-over-product:not(.xans-product-listrecommend, .xans-product-listnew)
+  > .title {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 0 24px;
+  margin: 0 0 90px;
   padding: 0 10px;
 }
 .ec-over-product .title h2 {
-  font-size: 26px;
-  color: #222;
-  font-weight: 400;
+  font-size: 40px;
+  color: #000;
+  font-weight: 500;
   text-align: left;
 }
 .ec-over-product .title h2 .sub {
   display: inline-block;
-  font-size: 16px;
-  color: #999;
+  font-size: 25px;
+  color: #8a8a8a;
   font-weight: 300;
-  margin: 0 0 0 5px;
+  margin: 12px 0 0 0;
 }
 .ec-over-product .title h3 {
   font-weight: 500;
@@ -326,7 +327,8 @@
 .ec-base-product {
   margin: 24px 0 0;
 }
-.ec-base-product:not(.xans-product-listrecommend, .xans-product-listnew) > .title {
+.ec-base-product:not(.xans-product-listrecommend, .xans-product-listnew)
+  > .title {
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -1,14 +1,14 @@
 /* 가로 카테고리 스크롤 고정 */
-$(document).ready(function () {
-  var top_btn = $("#menuFix").offset().top;
-  $(window).scroll(function () {
-    if ($(window).scrollTop() > top_btn + 50) {
-      $("#menuFix").addClass("menuFix_fixed");
-    } else {
-      $("#menuFix").removeClass("menuFix_fixed");
-    }
-  });
-});
+// $(document).ready(function () {
+//   var top_btn = $("#menuFix").offset().top;
+//   $(window).scroll(function () {
+//     if ($(window).scrollTop() > top_btn + 50) {
+//       $("#menuFix").addClass("menuFix_fixed");
+//     } else {
+//       $("#menuFix").removeClass("menuFix_fixed");
+//     }
+//   });
+// });
 
 /* 카테고리 */
 $(document).ready(function () {
@@ -107,8 +107,13 @@ $(document).ready(function () {
 });
 
 /* 돋보기 아이콘 클릭시 검색창 */
+// $(document).ready(function () {
+//   $("#header .topArea01 .right .search").click(function () {
+//     $(".searchWrap").toggle();
+//   });
+// });
 $(document).ready(function () {
-  $("#header .topArea01 .right .search").click(function () {
+  $("#header .search").click(function () {
     $(".searchWrap").toggle();
   });
 });
@@ -148,6 +153,24 @@ $(document).ready(function () {
   $(".btn.down").click(function () {
     return $("html, body").animate({ scrollTop: $(document).height() }, 1200, "easeInOutExpo"), !1;
   });
+});
+
+/* 상품상세 탭 */
+$("#prdInfo .infoBox .toggle").on("click", function () {
+  const $content = $(this).siblings(".content"); // 현재 클릭된 섹션의 내용
+
+  // 스르륵 애니메이션
+  if ($content.is(":visible")) {
+    // 열려 있으면 닫기
+    $content.slideUp(300, function () {
+      $(this).parent().removeClass("open");
+    });
+  } else {
+    // 닫혀 있으면 열기
+    $content.slideDown(300, function () {
+      $(this).parent().addClass("open");
+    });
+  }
 });
 
 jQuery.easing.jswing = jQuery.easing.swing;

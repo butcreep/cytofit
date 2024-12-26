@@ -93,6 +93,37 @@
   border-left: 1px solid #eee;
 }
 
+/* 상세정보리뉴얼 */
+#prdInfo .infoBox .cont {
+  margin-bottom: 10px;
+}
+
+#prdInfo .infoBox .toggle {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#prdInfo .infoBox .arrow {
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+#prdInfo .infoBox .content {
+  display: none; /* 기본적으로 숨김 */
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+}
+
+#prdInfo .infoBox .cont.open .content {
+  display: block; /* 펼쳐진 상태 */
+}
+
+#prdInfo .infoBox .cont.open .arrow {
+  transform: rotate(180deg); /* 화살표 반전 */
+}
+
 /* 상품 게시판 */
 .xans-product-additional div.board {
   padding: 27px 0 46px;

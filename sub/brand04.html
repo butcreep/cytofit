@@ -1,4 +1,4 @@
-<!--@layout(/layout/basic/brand01.html)-->
+<!--@layout(/layout/basic/brand.html)-->
 <!--@css(/gd_import/css/brand.css)-->
 
 <div id="brand-story">
@@ -36,73 +36,7 @@
     </div>
   </section>
 
-  <section class="solution-section">
-    <div class="solution-content">
-      <div>
-        <h1 class="title">Healty Inner Beauty<br />Solution</h1>
-        <p class="sub-description">
-          건강한 아름다움을 위한 이너뷰티 브랜드, 싸이토핏<br />최상의 케어를 받을 수 있는 전문성
-        </p>
-      </div>
-      <div class="tabs">
-        <button class="tab-button active" data-tab="skin-care">Skin Care</button>
-        <button class="tab-button" data-tab="diet">Diet</button>
-        <button class="tab-button" data-tab="blood-care">Blood Care</button>
-      </div>
-    </div>
-    <div class="swiper-container brand-story-swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="hover-card">
-            <img
-              src="//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/goodymall/brandstory/구성 요소 7 – 1.png"
-              alt="Skin Care Image"
-            />
-            <div class="hover-overlay">
-              <h3 class="overlay-title shadow">Skin Care</h3>
-              <p class="overlay-description shadow">
-                기본적 활동 솔루션으로<br />
-                피부 본연의 건강을 보호하고<br />
-                피부 장벽을 유지합니다.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="hover-card">
-            <img
-              src="//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/goodymall/brandstory/구성 요소 7 – 1.png"
-              alt="Skin Care Image"
-            />
-            <div class="hover-overlay">
-              <h3 class="overlay-title shadow">Skin Care</h3>
-              <p class="overlay-description shadow">
-                기본적 활동 솔루션으로<br />
-                피부 본연의 건강을 보호하고<br />
-                피부 장벽을 유지합니다.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="hover-card">
-            <img
-              src="//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/goodymall/brandstory/구성 요소 7 – 1.png"
-              alt="Skin Care Image"
-            />
-            <div class="hover-overlay">
-              <h3 class="overlay-title shadow">Skin Care</h3>
-              <p class="overlay-description shadow">
-                기본적 활동 솔루션으로<br />
-                피부 본연의 건강을 보호하고<br />
-                피부 장벽을 유지합니다.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!--@import(/sub/brand_solution.html)-->
 
   <section class="top-image-section">
     <div class="content">
@@ -148,95 +82,6 @@
     });
 </script> -->
 <script>
-  const header = document.querySelector(".header");
+  const header = document.querySelector("#header");
   header.setAttribute("data-theme", "dark");
-  // Swiper.js 초기화
-  const swiper = new Swiper(".brand-story-swiper", {
-    loop: false,
-    slidesPerView: 1.3,
-    spaceBetween: 50,
-  });
-
-  // 탭 버튼 기능
-  const tabs = document.querySelectorAll(".tab-button");
-  const swiperWrapper = document.querySelector(".brand-story-swiper .swiper-wrapper");
-
-  tabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-      // 모든 탭 비활성화
-      tabs.forEach(t => t.classList.remove("active"));
-      tab.classList.add("active");
-
-      // Swiper 슬라이드 업데이트 (데모 데이터에 따라 동적으로 변경 가능)
-      const tabType = tab.getAttribute("data-tab");
-      if (tabType === "skin-care") {
-        swiperWrapper.innerHTML = `
-          <div class="swiper-slide">
-            <div class="hover-card">
-              <img src="//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/goodymall/brandstory/구성 요소 7 – 1.png" alt="Skin Care Image" />
-              <div class="hover-overlay">
-            <span class="hover-text">Skin Care</span>
-          </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="hover-card">
-              <img src="//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/goodymall/brandstory/구성 요소 7 – 1.png" alt="Skin Care Image" />
-              <div class="hover-overlay">
-            <span class="hover-text">Skin Care</span>
-          </div>
-            </div>
-          </div>
-         <div class="swiper-slide">
-            <div class="hover-card">
-              <img src="//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/goodymall/brandstory/구성 요소 7 – 1.png" alt="Skin Care Image" />
-              <div class="hover-overlay">
-            <span class="hover-text">Skin Care</span>
-          </div>
-            </div>
-          </div>
-        `;
-      } else if (tabType === "diet") {
-        swiperWrapper.innerHTML = `
-          <div class="swiper-slide">
-            <div class="hover-card">
-              <img src="//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/goodymall/brandstory/brand_02.png" alt="Diet Image" />
-              <div class="hover-overlay">
-            <span class="hover-text">Skin Care</span>
-          </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="hover-card">
-              <img src="//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/goodymall/brandstory/brand_02.png" alt="Diet Image" />
-            <div class="hover-overlay">
-            <span class="hover-text">Skin Care</span>
-          </div>
-            </div>
-          </div>
-        `;
-      } else if (tabType === "blood-care") {
-        swiperWrapper.innerHTML = `
-          <div class="swiper-slide">
-            <div class="hover-card">
-              <img src="//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/goodymall/brandstory/brand_02.png" alt="Blood Care Image" />
-            <div class="hover-overlay">
-            <span class="hover-text">Skin Care</span>
-          </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="hover-card">
-              <img src="//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/goodymall/brandstory/brand_02.png" alt="Blood Care Image" />
-              <div class="hover-overlay">
-            <span class="hover-text">Skin Care</span>
-          </div>
-            </div>
-          </div>
-        `;
-      }
-
-      swiper.update(); // Swiper 갱신
-    });
-  });
 </script>

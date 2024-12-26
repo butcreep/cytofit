@@ -1,0 +1,54 @@
+.xans-layout-searchheader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 50px;
+  box-sizing: border-box;
+}
+.xans-layout-searchheader fieldset {
+  border-bottom: 2px solid #fff;
+}
+.xans-layout-searchheader #keyword {
+  width: calc(100% - 92px);
+  height: 40px;
+  margin: 0 20px;
+  padding: 0;
+  border: 0;
+  line-height: 40px;
+  font-size: 20px;
+  color: #fff;
+  background: transparent;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+}
+.xans-layout-searchheader i {
+  position: relative;
+  color: #fff;
+  font-size: 34px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+/*.xans-layout-searchheader fieldset .autoDrop { display:none; border:1px solid #565960; position:absolute; width: 187px; text-align:left; background:#fff; z-index:20; overflow:hidden; overflow-y:auto; max-height:100px;}
+.xans-layout-searchheader fieldset .autoDrop li a { display:block; padding:6px 10px; font-size:11px; color:#1c1c1c; font-family:GulimChe,Gulim; }
+.xans-layout-searchheader fieldset .autoDrop li a:hover,
+.xans-layout-searchheader fieldset .autoDrop li.selected a { text-decoration:none; color:#fff; background:#a1a4ae; }*/
+
+.popular {
+  margin: 16px 0;
+  text-align: center;
+}
+.popular a {
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 400;
+}
+.popular a:hover {
+  opacity: 0.5;
+}
