@@ -46,7 +46,7 @@
   width: 100%;
   height: auto;
   padding: 0;
-  margin: 0;
+  /* margin: 0; */
 }
 
 /* 슬라이드 */
@@ -284,7 +284,7 @@
 .xans-product-detail .detailArea .product_image_box .product_image_pg .swiper-button-next {
   display: block;
   position: absolute;
-  top: 33.333%;
+  top: 50%;
   outline: 0;
   width: 40px;
   height: 40px;
@@ -336,12 +336,14 @@
 }
 .xans-product-detail .detailArea .product_image_box .product_image_pg .swiper-button-prev {
   left: -10px;
-  background: #fff url(/web/upload/jwgimg/50px_left_bt.png) no-repeat center center;
+  background: #000 url(//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/asset/icons/thumb_bt_left.svg)
+    no-repeat center center;
   background-size: 26px 26px;
 }
 .xans-product-detail .detailArea .product_image_box .product_image_pg .swiper-button-next {
   right: -10px;
-  background: #fff url(/web/upload/jwgimg/50px_right_bt.png) no-repeat center center;
+  background: #000 url(//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/asset/icons/thumb_bt_right.svg)
+    no-repeat center center;
   background-size: 26px 26px;
 }
 /* 롤오버 */

@@ -36,11 +36,29 @@ EC$(function ($) {
       if (!isNaN(price1) && !isNaN(price2[0])) {
         discountRate = Math.round(((price1 - price2[0]) / price1) * 100);
         if (discountRate > 0 && discountRate != 100 && $(this).find(".ec-sale-rate").length < 1) {
-          $(".xans-product-detail #span_product_price_text").append(
-            '<span class="ec-sale-rate">' + discountRate + "%</span>",
-          );
+          $(".discount_rate").text(discountRate + "%");
+          // $(".xans-product-detail #span_product_price_text").append(
+          //   '<span class="ec-sale-rate">' + discountRate + "%</span>",
+          // );
         }
       }
+    }
+  }
+});
+// tbody 내의 모든 <tr>을 순회
+document.querySelectorAll(".xans-product-detaildesign tbody tr").forEach(row => {
+  // 각 <tr>의 클래스 추출
+  const rowClass = row.className.split(" ")[1];
+  console.log("👉", rowClass);
+  // '_css'가 포함된 클래스만 처리
+  if (rowClass.includes("_css")) {
+    // 해당 클래스와 동일한 <div>를 prod_price 내부에서 찾기
+    const targetDiv = document.querySelector(`.prod_price .${rowClass}`);
+    console.log("👉", targetDiv);
+    if (targetDiv) {
+      // <td> 값을 가져와 targetDiv에 삽입
+      const tdValue = row.querySelector("td").innerText;
+      targetDiv.textContent = tdValue;
     }
   }
 });

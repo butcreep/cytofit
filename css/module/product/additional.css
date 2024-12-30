@@ -22,11 +22,20 @@
 }
 
 /* 추가 */
+.xans-product-additional .ec-base-tab.gFlex .menu {
+  justify-content: center;
+  gap: 20px;
+}
 .xans-product-additional .ec-base-tab.gFlex .menu li {
+  flex: none;
+}
+.xans-product-additional .ec-base-tab.gFlex .menu li:not(:last-child) {
   /* border: 1px solid #eee;
   background: #f8f8f8;
   border-radius: 8px; */
-  margin: 0 4px;
+  /* margin: 0 4px; */
+  border-right: 1px solid #919191;
+  padding-right: 20px;
 }
 .xans-product-additional .ec-base-tab.gFlex .menu li a {
   font-size: 15px;
@@ -48,7 +57,7 @@
   top: 8px; */
 }
 .xans-product-additional .ec-base-tab.gFlex .menu li:last-child {
-  border-right: 1px solid #eee;
+  /* border-right: 1px solid #eee; */
 }
 .xans-product-additional .ec-base-tab.gFlex .menu li.selected a {
   left: 0;

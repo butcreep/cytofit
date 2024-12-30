@@ -40,7 +40,7 @@
           <!--@css(/gd_import/css/product_image_box.css)-->
           <!--@js(/gd_import/js/product_image_box.js)-->
           <!-- 스와이프 썸네일 -->
-          <div class="product_image_pg" module="product_addimage">
+          <div class="product_image_pg imgArea" module="product_addimage">
             <div class="swiper-wrapper">
               <div class="swiper-slide">{$add_big_img}</div>
               <div class="swiper-slide">{$add_big_img}</div>
@@ -63,7 +63,6 @@
         <h3><span>이벤트</span></h3>
         <div class="event">{$common_event_a}</div>
       </div>
-      <!--@import(/coupon/coupon_productdetail.html)-->
 
       <div module="product_additional">
         <!--@css(/css/module/product/additional.css)-->
@@ -85,13 +84,12 @@
 
         <div id="prdInfo" class="ec-base-tab gFlex">
           <ul class="menu">
-            <li><a href="#prdDetail">상품상세정보</a></li>
-            <li class="selected"><a href="#prdInfo">상품구매안내</a></li>
             <li class="{$review_display|display}">
               <a href="#prdReview">상품사용후기<span class="review_count">( {$review_count} )</span></a>
             </li>
+            <li><a href="#prdDetail">상품상세정보</a></li>
+            <li class="selected"><a href="#prdInfo">상품구매안내</a></li>
             <li class="{$qna_display|display}"><a href="#prdQnA">상품Q&amp;A</a></li>
-            <li><a href="#prdRelated">관련상품</a></li>
           </ul>
           <div class="infoBox">
             <div class="cont open">
@@ -135,13 +133,13 @@
 
         <div id="prdReview" class="ec-base-tab gFlex {$review_display|display}">
           <ul class="menu">
-            <li><a href="#prdDetail">상품상세정보</a></li>
-            <li><a href="#prdInfo">상품구매안내</a></li>
             <li class="selected">
               <a href="#prdReview">상품사용후기<span class="review_count">( {$review_count} )</span></a>
             </li>
+            <li><a href="#prdDetail">상품상세정보</a></li>
+            <li><a href="#prdInfo">상품구매안내</a></li>
             <li><a href="#prdQnA">상품Q&amp;A</a></li>
-            <li><a href="#prdRelated">관련상품</a></li>
+            <!-- <li><a href="#prdRelated">관련상품</a></li> -->
           </ul>
           <div class="board">
             <!--h3>[ 상품사용후기 ]</h3>
@@ -257,13 +255,13 @@
 
         <div id="prdQnA" class="ec-base-tab gFlex {$qna_display|display}">
           <ul class="menu">
-            <li><a href="#prdDetail">상품상세정보</a></li>
-            <li><a href="#prdInfo">상품구매안내</a></li>
             <li>
               <a href="#prdReview">상품사용후기<span class="review_count">( {$review_count} )</span></a>
             </li>
+            <li><a href="#prdDetail">상품상세정보</a></li>
+            <li><a href="#prdInfo">상품구매안내</a></li>
             <li class="selected"><a href="#prdQnA">상품Q&amp;A</a></li>
-            <li><a href="#prdRelated">관련상품</a></li>
+            <!-- <li><a href="#prdRelated">관련상품</a></li> -->
           </ul>
 
           <div class="board">
@@ -377,69 +375,18 @@
         </div>
         <div class="headingArea">
           <h1>{$name}</h1>
-          <div class="supply displaynone">></div>
+          <div class="supply displaynone"></div>
           <span class="delivery displaynone"></span>
-          <div class="summary_desc_css"></div>
-          <div class="simple_desc_css"></div>
-
-          <div class="productArea">
-            <div class="prod_price">
-              <div class="product_custom_css"></div>
-              <div class="discount_rate"></div>
-              <div class="product_price_css"></div>
-            </div>
-            <div class="prod_coupon">
-              <a href="javascript:;">쿠폰 받기<img src="/skin_img/icon_download_wt.svg" alt="" /></a>
-            </div>
-            <div class="coupon_modal modal" id="couponModalContainer">
-              <div class="xans-element- xans-coupon xans-coupon-productdetailajax coupon_layer">
-                <!--
-                  $coupon_down_result_url = /coupon/coupon_down_result.html
-                -->
-                <div class="coupon_title">쿠폰받기</div>
-                <ul class="coupon_list">
-                  <li class="xans-record-">
-                    <div class="coupon">
-                      <div class="detail">
-                        <p class="discount"><span>1000원 할인</span></p>
-                        <p class="name">할인쿠폰</p>
-                        <p class="period">2024-10-24 ~ 2029-10-31</p>
-                      </div>
-                      <div class="button">
-                        <a href="">쿠폰<br />다운받기</a>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="xans-record-">
-                    <div class="coupon">
-                      <div class="detail">
-                        <p class="discount"><span>2000원 할인</span></p>
-                        <p class="name">기간할인</p>
-                        <p class="period">2024-10-24 ~ 2029-10-31</p>
-                      </div>
-                      <div class="button">
-                        <a href="">쿠폰<br />다운받기</a>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="xans-record-">
-                    <div class="coupon">
-                      <div class="detail">
-                        <p class="discount"><span>3000원 할인</span></p>
-                        <p class="name">감사 할인</p>
-                        <p class="period">2024-10-24 ~ 2029-10-31</p>
-                      </div>
-                      <div class="button">
-                        <a href="">쿠폰<br />다운받기</a>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-                <div class="all_coupondown">
-                  <a href="#none" id="btn_all_coupondown" class="btnSubmit sizeL">쿠폰 한번에 받기</a>
-                </div>
-              </div>
-            </div>
+          <div class="summary_desc_css">{$summary_desc}</div>
+          <div class="simple_desc_css">{$simple_desc}</div>
+        </div>
+        <div class="productArea">
+          <div class="prod_price">
+            <div class="discount_rate"></div>
+            <div class="product_price_css"></div>
+            <div class="product_custom_css"></div>
+            <div class="prd_price_sale_css"></div>
+            <div class="prd_optimal_discount_css"></div>
           </div>
         </div>
         <div module="product_detaildesign">
@@ -453,16 +400,60 @@
               {$name} 기본 정보
             </caption>
             <tbody>
-              <tr class="{$item_display|display}">
+              <tr class="{$item_display|display} product_name_css">
                 <th scope="row">{$item_title}</th>
                 <td>{$item_content}</td>
               </tr>
-              <tr class="{$item_display|display}">
+              <tr class="{$item_display|display} summary_desc_css">
+                <th scope="row">{$item_title}</th>
+                <td>{$item_content}</td>
+              </tr>
+              <tr class="{$item_display|display} delivery_info_css">
+                <th scope="row">{$item_title}</th>
+                <td>{$item_content}</td>
+              </tr>
+              <tr class="{$item_display|display} delivery_price_css">
+                <th scope="row">{$item_title}</th>
+                <td>{$item_content}</td>
+              </tr>
+              <tr class="{$item_display|display} product_custom_css">
+                <th scope="row">{$item_title}</th>
+                <td>{$item_content}</td>
+              </tr>
+              <tr class="{$item_display|display} product_price_css">
+                <th scope="row">{$item_title}</th>
+                <td>{$item_content}</td>
+              </tr>
+              <tr class="{$item_display|display} prd_price_sale_css">
+                <th scope="row">{$item_title}</th>
+                <td>{$item_content}</td>
+              </tr>
+              <tr class="{$item_display|display} prd_optimal_discount_css">
+                <th scope="row">{$item_title}</th>
+                <td>{$item_content}</td>
+              </tr>
+              <tr class="{$item_display|display} simple_desc_css">
+                <th scope="row">{$item_title}</th>
+                <td>{$item_content}</td>
+              </tr>
+              <tr class="{$item_display|display} prd_promotion_date_css">
                 <th scope="row">{$item_title}</th>
                 <td>{$item_content}</td>
               </tr>
             </tbody>
           </table>
+        </div>
+        <!-- coupon -->
+        <div class="prod_coupon">
+          <a href="javascript:;"
+            >쿠폰 받기<img
+              src="//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/asset/icons/download_icon.svg"
+              alt=""
+          /></a>
+        </div>
+        <div class="coupon_modal modal" id="couponModalContainer">
+          <!--@import(/coupon/coupon_productdetail.html)-->
+          <a href="#close-modal" rel="modal:close" class="close-modal">Close</a>
         </div>
         <!--div>
                 <table style="margin:0">
@@ -616,7 +607,7 @@
           </dd>
         </dl>
 
-        <div class="guideArea">
+        <!-- <div class="guideArea">
           <p class="info {$limit_display|display}">
             (최소주문수량 {$minimum_limit}개 이상<span class="{$maximum_limit_display|display}">
               / 최대주문수량 {$maximum_limit}개 이하</span
@@ -626,7 +617,7 @@
           <span class="sizeGuide {$size_guide_display|display}"
             ><a href="#none" class="{$size_guide_class}" product_no="{$product_no}">사이즈 가이드</a></span
           >
-        </div>
+        </div> -->
 
         <div class="productSet" module="product_setproduct">
           <!--
@@ -1047,15 +1038,15 @@
         </div>
 
         <div id="{$total.total_id}" class="{$total.total_display|display}">
-          <p class="ec-base-help txtWarn txt12 {$single_item_display|display}">수량을 선택해주세요.</p>
+          <!-- <p class="ec-base-help txtWarn txt12 {$single_item_display|display}">수량을 선택해주세요.</p>
           <p class="ec-base-help txtWarn txt12 {$several_item_display|display}">
             위 옵션선택 박스를 선택하시면 아래에 상품이 추가됩니다.
-          </p>
+          </p> -->
           <table border="1" summary="">
             <caption>
               상품 목록
             </caption>
-            <colgroup>
+            <!-- <colgroup>
               <col style="width: 284px" />
               <col style="width: 80px" />
               <col style="width: 110px" />
@@ -1066,7 +1057,7 @@
                 <th scope="col">상품수</th>
                 <th scope="col">가격</th>
               </tr>
-            </thead>
+            </thead> -->
             <tbody class="{$quantity_display|display}">
               <tr>
                 <td>{$name}</td>
@@ -1156,7 +1147,7 @@
         </div>
 
         <div id="{$total.total_price_id}" class="totalPrice">
-          <strong>총 상품금액</strong>(수량) :
+          <strong>총 구매 금액</strong>
           <span class="{$total.total_cnt}"
             ><strong><em>0</em></strong> (0개)</span
           >
@@ -1219,13 +1210,13 @@
 <div module="product_relation" id="prdRelated" class="ec-base-tab gFlex">
   <!--@css(/css/module/product/relation.css)-->
   <ul class="menu">
-    <li><a href="#prdDetail">상품상세정보</a></li>
-    <li><a href="#prdInfo">상품구매안내</a></li>
     <li class="{$disp_rel_review|display}">
       <a href="#prdReview">상품사용후기<span class="review_count" module="product_action">( {$review_count} )</span></a>
     </li>
+    <li><a href="#prdDetail">상품상세정보</a></li>
+    <li><a href="#prdInfo">상품구매안내</a></li>
     <li class="{$disp_rel_qna|display}"><a href="#prdQnA">상품Q&amp;A</a></li>
-    <li class="selected"><a href="#prdRelated">관련상품</a></li>
+    <!-- <li class="selected"><a href="#prdRelated">관련상품</a></li> -->
   </ul>
 
   <!-- 관련상품 롤링진열 -->

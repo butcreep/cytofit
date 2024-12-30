@@ -139,7 +139,7 @@
   position: relative;
 }
 .ec-base-tab.gFlex .menu li:last-child {
-  border-right: 1px solid #cbcdce;
+  /* border-right: 1px solid #cbcdce; */
 }
 .ec-base-tab.gFlex .menu li a {
   width: 100%;

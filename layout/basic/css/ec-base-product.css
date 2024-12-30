@@ -1,6 +1,6 @@
 /* 메인 진열 - 마우스오버진열 */
 .ec-over-product .xans-product-listitem .display상품요약정보 {
-  margin: 15px auto 28px;
+  margin: 10px auto 15px;
 }
 .ec-over-product .xans-product-listitem .display상품.요약설명 {
   margin: 8px auto 4px;
@@ -35,8 +35,7 @@
 .ec-over-product {
   margin: 100px auto;
 }
-.ec-over-product:not(.xans-product-listrecommend, .xans-product-listnew)
-  > .title {
+.ec-over-product:not(.xans-product-listrecommend, .xans-product-listnew) > .title {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -327,8 +326,7 @@
 .ec-base-product {
   margin: 24px 0 0;
 }
-.ec-base-product:not(.xans-product-listrecommend, .xans-product-listnew)
-  > .title {
+.ec-base-product:not(.xans-product-listrecommend, .xans-product-listnew) > .title {
   display: flex;
   justify-content: space-between;
   align-items: center;

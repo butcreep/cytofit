@@ -19,21 +19,10 @@
   color: #fff;
 }
 
-@media all and (max-width: 1024px) {
-  #tbanner {
-    height: 2.8rem;
-  }
-
-  #tbanner .swiper-wrapper li a {
-    height: 2.8rem;
-    line-height: 2.8rem;
-    font-size: 1rem;
-  }
-}
 /************** ■ 상단 ■ **************/
-#main #header {
+/* #main #header {
   position: absolute;
-}
+} */
 /* #header {
   position: relative;
   width: 100%;
@@ -182,14 +171,22 @@
 }
 /************** ■ 헤더리뉴얼 ■ **************/
 #header {
-  position: absolute;
+  position: fixed;
   top: 40px;
   left: 0;
   width: 100%;
   height: 105px;
   box-sizing: border-box;
   z-index: 1000; /* 다른 요소 위로 오도록 설정 */
-  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+  transition: background 0.3s ease, backdrop-filter 0.3s ease, top 0.3s ease;
+}
+#header.fixed {
+  top: 0px;
+  /* position: fixed; */
+  transition: 0.3s !important;
+  background: rgba(255, 255, 255, 0); /* hover 시 배경 진해짐 */
+  backdrop-filter: blur(30px); /* 블러 유지 */
+  -webkit-backdrop-filter: blur(30px);
 }
 
 /* 헤더 hover 효과 */

@@ -172,6 +172,49 @@ $("#prdInfo .infoBox .toggle").on("click", function () {
     });
   }
 });
+// 헤더 스크롤
+const headerTop = new Swiper("#tbanner", {
+  speed: 1000,
+  observer: true,
+  observeParents: true,
+  loop: true,
+  direction: "vertical",
+  autoplay: {
+    delay: 1500,
+    disableOnInteraction: false,
+  },
+});
+const $tbanner = $("#tbanner");
+const $header = $("#header");
+let previousScroll = 0; // 이전 스크롤 위치를 저장
+
+// 초기 로드 시 스크롤 위치 감지
+$(document).ready(function () {
+  const currentScroll = $(window).scrollTop(); // 현재 스크롤 위치
+  const bannerHeight = $tbanner.height() || 0; // 배너 높이 (없을 경우 0으로 처리)
+  if (currentScroll > bannerHeight) {
+    $header.addClass("fixed"); // fixed 클래스 추가
+  }
+});
+
+$(window).on("scroll", function () {
+  const currentScroll = $(this).scrollTop(); // 현재 스크롤 위치
+  const bannerHeight = $tbanner.height() || 0; // 배너 높이 (없을 경우 0으로 처리)
+
+  if (currentScroll > previousScroll) {
+    // 아래로 스크롤
+    if (currentScroll > bannerHeight) {
+      $header.addClass("fixed");
+    }
+  } else {
+    // 위로 스크롤
+    if (currentScroll <= bannerHeight) {
+      $header.removeClass("fixed");
+    }
+  }
+
+  previousScroll = currentScroll; // 현재 스크롤 값을 저장
+});
 
 jQuery.easing.jswing = jQuery.easing.swing;
 jQuery.extend(jQuery.easing, {

@@ -34,6 +34,11 @@ img {
   margin: 0;
   padding: 0;
 }
+input,
+select,
+textarea {
+  font-family: var(--font-pretendard) !important;
+}
 * {
   font-family: var(--font-pretendard);
 }
@@ -109,6 +114,23 @@ strong {
 }
 h3 {
   font-weight: 400;
+}
+select {
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/asset/icons/select.png");
+  background-repeat: no-repeat;
+  background-size: 11px 6px;
+  background-position: center right 12px;
+  border-color: #e5e5e5;
+  border-radius: 0px;
+  background-color: #fff;
+  min-width: 86px;
+  padding: 0 24px 0 12px;
+  font-size: 13px !important;
+  border: 1px solid #d5d5d5;
 }
 .objHidden {
   visibility: hidden;

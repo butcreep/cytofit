@@ -13,6 +13,13 @@
   justify-content: space-between;
   max-width: calc(1320px + 100px);
 }
+.detail-wrap {
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+  z-index: 10;
+  justify-content: space-between;
+}
 .detail-wrap .detail-left {
   width: calc(100% - 530px);
 }
@@ -20,39 +27,58 @@
   width: 500px;
   position: sticky;
   display: block;
-  top: 100px;
+  top: calc(40px + 105px);
   height: calc(100vh - 160px);
   z-index: 1;
   overflow-y: scroll;
   padding-right: 10px;
 }
-.xans-product-detail .detailArea:after {
+/* 스크롤바 */
+.detail-wrap .detail-right::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgb(255, 255, 255);
+}
+
+.detail-wrap .detail-right::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.detail-wrap .detail-right::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255, 255, 255, 1);
+}
+
+.detail-wrap .detail-right::-webkit-scrollbar {
+  width: 5px;
+}
+
+.detail-wrap .detail-right::-webkit-scrollbar:hover,
+.detail-wrap .detail-right:hover::-webkit-scrollbar {
+  width: 5px;
+}
+/* .xans-product-detail .detailArea:after {
   content: "";
   display: block;
   clear: both;
-}
-
-/* 소비자가 기준 할인가 */
-.xans-product-detail .ec-sale-rate {
-  display: inline-block;
-  margin-left: 10px;
-  font-weight: 700;
-  color: #f0352e;
-}
+} */
 
 /* headingArea */
 .xans-product-detail .headingArea {
   position: relative;
-  padding: 0 0 8px 8px;
-  margin: 0 0 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #b4b4b4;
   font-size: 14px;
   line-height: 24px;
 }
-.xans-product-detail .headingArea h2 {
-  display: inline;
+.xans-product-detail .headingArea h1 {
+  /* display: inline; */
   font-size: 22px;
-  color: #222;
-  font-weight: 400;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.xans-product-detail .summary_desc_css {
+  color: #919191;
+  font-size: 15px;
 }
 .xans-product-detail .headingArea .icon img {
   margin: 0 4px 0 0;
@@ -69,12 +95,91 @@
   font-weight: bold;
   color: #555;
 }
-
+/* productArea */
+.xans-product-detail .productArea {
+  position: relative;
+  margin: 20px 0;
+}
+.xans-product-detail .prod_price .product_custom_css {
+  color: #999;
+  text-decoration: line-through;
+  font-size: 17px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+/* 소비자가 기준 할인가 */
+.xans-product-detail .prod_price .discount_rate {
+  margin-right: 5px;
+  color: #f53254 !important;
+}
+.xans-product-detail .prod_price .discount_rate,
+.xans-product-detail .prod_price .product_price_css {
+  font-size: 21px;
+  font-weight: bold;
+  display: inline-block;
+  vertical-align: middle;
+  color: #000;
+}
+/* coupon */
+.xans-product-detail .prod_coupon {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #b4b4b4;
+}
+.xans-product-detail .prod_coupon a {
+  border: 1px solid #000000;
+  border-radius: 10px;
+  display: inline-block;
+  font-size: 13px;
+  padding: 10px 30px;
+  text-decoration: none;
+  transition: opacity 0.25s ease;
+  color: #000;
+}
+.xans-product-detail .infoArea .prod_coupon img {
+  width: 13px;
+  margin: -2px 0 0 5px;
+  vertical-align: middle;
+}
+.coupon_modal.modal {
+  width: 400px;
+  max-width: 400px;
+  display: none;
+  vertical-align: middle;
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  box-sizing: border-box;
+  width: 90%;
+  background: #fff;
+  padding: 15px 30px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0 0 10px #696969;
+  -moz-box-shadow: 0 0 10px #696969;
+  -o-box-shadow: 0 0 10px #696969;
+  -ms-box-shadow: 0 0 10px #696969;
+  box-shadow: 0 0 10px #696969;
+  text-align: left;
+}
+/* infoArea */
+.xans-product-detail .infoArea th,
+.xans-product-detail .infoArea td {
+  padding: 7px 0;
+  vertical-align: middle;
+}
 /* imgArea */
 .xans-product-detail .imgArea {
   /* float: left;
   width: 39%;
   margin: 0; */
+  width: 100%;
+  max-width: 735px;
+  margin: 0 auto;
 }
 .xans-product-detail .imgArea .keyImg {
   width: 100%;
@@ -238,6 +343,19 @@
   /* float: left;
   width: 51%;
   margin-left: 10%; */
+  width: 100%;
+}
+.xans-product-detail .infoArea .icon {
+  display: flex;
+  justify-content: flex-start; /* 수평 가운데 정렬 */
+  align-items: center; /* 수직 가운데 정렬 (필요 시) */
+  gap: 10px; /* 이미지 간의 간격 */
+  margin-bottom: 20px;
+}
+.xans-product-detail .infoArea .icon img {
+  height: 26px; /* 모든 이미지의 높이를 동일하게 설정 */
+  width: auto; /* 이미지 비율을 유지하면서 너비는 자동 조정 */
+  display: block; /* 여분의 간격 제거 */
 }
 .xans-product-detail .infoArea p.delivery {
   padding: 10px 0 20px;
@@ -275,9 +393,9 @@
 }
 .xans-product-detail .infoArea th {
   font-weight: normal;
-  color: #333;
+  color: #000;
   width: 115px;
-  padding: 7px 0 8px 9px;
+  /* padding: 7px 0 8px 9px; */
   text-align: left;
   vertical-align: middle;
 }
@@ -294,7 +412,7 @@
 }
 .xans-product-detail .infoArea select {
   width: 100%;
-  height: 24px;
+  height: 40px;
   font-size: 12px;
   color: #333;
 }
@@ -355,6 +473,9 @@
   vertical-align: middle;
 }
 
+.xans-product-detail .infoArea .xans-product-option {
+  margin: 20px 0 0;
+}
 .xans-product-detail .infoArea .xans-product-option tr th {
   vertical-align: top;
 }
@@ -363,13 +484,13 @@
 }
 .xans-product-detail .infoArea .xans-product-option tr:first-child th,
 .xans-product-detail .infoArea .xans-product-option .xans-product-fileoption th {
-  padding-top: 14px;
-  border-top: 1px solid #e8e8e8;
+  /* padding-top: 14px; */
+  /* border-top: 1px solid #e8e8e8; */
 }
 .xans-product-detail .infoArea .xans-product-option tr:first-child td,
 .xans-product-detail .infoArea .xans-product-option .xans-product-fileoption td {
-  padding-top: 10px;
-  border-top: 1px solid #e8e8e8;
+  /* padding-top: 10px; */
+  /* border-top: 1px solid #e8e8e8; */
 }
 .xans-product-detail .infoArea .xans-product-option td.selectButton {
   text-align: right;
@@ -530,7 +651,7 @@
 /* xans-product-action */
 .xans-product-detail .infoArea .xans-product-action {
   padding: 30px 0 10px;
-  border-top: 1px solid #e8e8e8;
+  /* border-top: 1px solid #e8e8e8; */
 }
 .xans-product-detail .infoArea .xans-product-action .ec-base-button .first {
   width: 100%;
@@ -586,8 +707,15 @@
   background-color: #000;
   color: #fff;
   border: 1px solid #000;
-  border-radius: 4px;
+  border-radius: 10px;
   box-sizing: border-box;
+  margin: 0;
+}
+.xans-product-detail .infoArea .xans-product-action .ec-base-button .btnBlack:first-child {
+  border-radius: 10px 0 0 10px;
+}
+.xans-product-detail .infoArea .xans-product-action .ec-base-button .btnBlack:nth-child(2) {
+  border-radius: 0 10px 10px 0;
 }
 .xans-product-detail .infoArea .xans-product-action .ec-base-button .btnWhite {
   /* width: 49.5%;
@@ -879,158 +1007,711 @@
 
 /* 총 상품 */
 #totalProducts {
-  margin: 21px 0 0;
+  padding-top: 20px;
+  margin: 20px 0;
+  border-top: 1px solid #b4b4b4;
 }
+
 #totalProducts table {
   margin: 0;
 }
+
 #totalProducts table .left {
   text-align: left;
 }
+
 #totalProducts table .center {
   text-align: center;
 }
+
 #totalProducts table .right {
-  padding-right: 9px;
   font-weight: bold;
-  color: #000;
   text-align: right;
 }
+
+#totalProducts tr {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+#totalProducts td {
+  font-size: 13px;
+}
+
+#totalProducts tbody > tr {
+  border-bottom: 2px solid #fff;
+  background: #f8f8f8;
+}
+
+#totalProducts tbody > #totalProductsOption {
+  border-bottom: 0px solid #fff;
+}
+
+#totalProducts tbody > #totalProductsOption > td {
+  padding: 0 15px !important;
+}
+
+#totalProducts tbody > tr table tr {
+  border: 0;
+}
+
 #totalProducts thead th {
   height: 0;
   padding: 0;
   font-size: 0;
   line-height: 0;
 }
+
 #totalProducts tbody th {
   vertical-align: middle;
 }
+
+#totalProducts tbody th strong {
+  font-weight: normal;
+}
+
 #totalProducts tbody td {
-  padding: 9px 0;
-  border-top: 1px solid #ebebeb;
-  color: #353535;
+  padding: 19px 0;
+  font-size: 13px;
   line-height: 18px;
   vertical-align: middle;
   word-wrap: break-word;
   word-break: break-all;
+  background: #f9f9f9;
 }
-#totalProducts tbody td p {
-  padding: 8px;
-  font-weight: 400;
-  line-height: 21px;
+
+#totalProducts tbody td .product + .product {
+  padding: 7px 10px 0 0;
 }
-#totalProducts tbody td p.product span {
+
+#totalProducts tbody td .product span {
   font-weight: normal;
-  color: #757575;
+  color: #7d7d7d;
   line-height: 18px;
 }
-#totalProducts tbody td p.product span.soldOut {
-  color: #000;
+
+#totalProducts tbody td .product span.soldOut {
+  display: inline-block;
 }
+
 #totalProducts tbody td img {
   vertical-align: middle;
 }
-#totalProducts tbody td .quantity {
-  display: inline-block;
+
+#totalProducts table p:not(.product) {
   position: relative;
-  width: 50px;
+  display: inline-block;
+  width: 103px;
+  margin: 10px 0 0;
+  padding: 0 30px;
   vertical-align: top;
+  box-sizing: border-box;
+  line-height: 0;
 }
-#totalProducts tbody td .quantity input {
-  width: 22px;
-  height: 23px;
-  padding: 0 2px 0 3px;
-  line-height: 23px;
-  border: 1px solid #d4d8d9;
-  border-radius: 3px 0 0 3px;
+
+#totalProducts table p:not(.product) .quantity_opt,
+#totalProducts table p input {
+  width: 45px;
+  height: 30px;
+  padding: 0;
+  line-height: 28px;
+  margin-left: -1px;
+  border: 1px solid #e5e5e5;
+  text-align: center;
 }
-#totalProducts tbody td .quantity .up {
+
+#totalProducts table p:not(.product) .quantity_opt:focus,
+#totalProducts table p:not(.product) .quantity_opt:hover {
+  border: 1px solid #e5e5e5;
+}
+
+#totalProducts table p:not(.product) img {
   position: absolute;
-  left: 28px;
+  top: 0;
+  left: 0;
+  opacity: 0.00001;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+#totalProducts table p:not(.product) .up,
+#totalProducts table p:not(.product) .eProductQuantityUpClass {
+  position: absolute;
+  right: 0;
   top: 0;
 }
-#totalProducts tbody td .quantity .down {
+
+#totalProducts table p:not(.product) .down,
+#totalProducts table p:not(.product) .eProductQuantityDownClass {
   position: absolute;
-  left: 28px;
-  top: 12px;
+  left: 0;
+  top: 0;
 }
-#totalProducts tbody.option_products tr td .quantity input,
-#totalProducts tbody.add_products tr td .quantity input {
-  height: 19px;
-  line-height: 19px;
+
+#totalProducts table p:not(.product) a {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 150%;
+  color: transparent;
+  font-size: 1px;
+  line-height: 1px;
+  background: #fff;
 }
-#totalProducts tbody.option_products tr td .quantity .down,
-#totalProducts tbody.add_products tr td .quantity .down {
-  bottom: 0;
-  top: auto;
+
+#totalProducts table p:not(.product) a:before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  width: 9px;
+  height: 1px;
+  background: #000;
 }
+
+#totalProducts table p:not(.product) .up:after,
+#totalProducts table p:not(.product) .eProductQuantityUpClass:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1px;
+  height: 9px;
+  margin: -4px 0 0 0;
+  background: #000;
+}
+
+#totalProducts .quantity {
+  display: inline-block;
+  position: relative;
+  width: 103px !important;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+
+#totalProducts .quantity input {
+  width: 45px;
+  height: 30px;
+  line-height: 28px;
+  margin-left: -1px;
+  padding: 0;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: center;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+#totalProducts .quantity input:focus,
+#totalProducts .quantity input:hover {
+  border: 1px solid #e5e5e5;
+}
+
+#totalProducts .quantity img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.00001;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+#totalProducts .quantity .up,
+#totalProducts .eAddProductQuantityUpClass,
+#totalProducts .up.eProductQuantityUpClass,
+#totalProducts p:not(.product) .up {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #fff;
+}
+
+#totalProducts .quantity .down,
+#totalProducts .eAddProductQuantityDownClass,
+#totalProducts .down.eProductQuantityDownClass,
+#totalProducts p:not(.product) .down {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #fff;
+}
+#totalProducts .quantity .up {
+  border-left: none;
+}
+#totalProducts .quantity .down {
+  border-right: none;
+}
+#totalProducts .quantity a {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 150%;
+  color: transparent;
+  font-size: 1px;
+  line-height: 1px;
+  background-color: #fff;
+}
+
+#totalProducts .quantity a:before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  width: 9px;
+  height: 1px;
+  background: #000;
+}
+
+#totalProducts .quantity .up:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1px;
+  height: 9px;
+  margin: -4px 0 0 0;
+  background: #000;
+}
+
+#totalProducts .delete,
+#totalProducts .option_box_del {
+  position: absolute;
+  right: 14px;
+  display: block;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  margin-top: 15px;
+}
+
+#totalProducts .option_box_del {
+  content: url(//img.echosting.cafe24.com/skin/skin/product/ico_product_delete.svg);
+}
+
+#totalProducts .delete {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  margin-top: 15px;
+  vertical-align: middle;
+  background: url(//img.echosting.cafe24.com/skin/skin/product/ico_product_delete.svg) no-repeat 0 0;
+}
+
+#totalProducts .add_products .delete {
+  margin-top: 14px;
+}
+
+#totalProducts .delete img {
+  opacity: 0.00001;
+}
+
 #totalProducts tbody td .mileage {
   display: block;
   white-space: nowrap;
 }
-#totalProducts tbody td .mileage_price {
+
+#totalProducts tbody td .mileage .mileage_price {
+  font-weight: normal;
 }
-#totalProducts tbody tr.option td {
-  border-top: 1px solid #ebebeb;
+
+#totalProducts .xans-product-fileoption {
+  border-top: 1px solid #e5e5e5;
 }
-#totalProducts tbody tr.option th {
+
+#totalProducts tbody > tr.option_product,
+#totalProducts tbody > tr.add_product {
+  /* border-bottom: 7px solid #fff; */
+}
+
+#totalProducts tbody > tr.add_product {
+  display: block;
+}
+
+#totalProducts tr.option_product > td > table tr:first-child td:nth-child(2),
+#totalProducts tr.option_product > td > table tr:first-child td:nth-child(3) {
+  white-space: nowrap;
+}
+
+#totalProducts tr.option_product > td > table tr:first-child td.right {
+  white-space: normal;
+}
+
+#totalProducts tr.option_product > td > table tr:first-child th,
+#totalProducts tr.option_product > td > table tr:first-child td {
   border-top: 0;
 }
-#totalProducts > table > tbody > tr:first-child > td {
-  border-top: 1px solid #eee;
-}
-#totalProducts > table > tbody > tr > td:first-child {
-  padding-left: 4px;
-}
-#totalProducts table tr.option_product > td {
-  padding: 0;
-}
-#totalProducts table tr.option_product > td > table tr:first-child td {
-  border-top: 0;
-}
-#totalProducts table tr.option_product > td > table tr.option > td {
-  border-top: 1px solid #ebebeb;
+
+#totalProducts tr.option_product > td > table tr.option > td {
+  border-top: 1px solid #e5e5e5;
   padding: 9px 0;
 }
-#totalProducts table tr.option_product > td > table tr.option > td:first-child {
+
+#totalProducts tr.option_product > td > table tr.option > td:first-child {
   padding: 0;
 }
-#totalProducts table tr.option_product + tr.option_product > td {
-  border-top: 1px solid #eee;
+
+#totalProducts tr.option_product th[colspan="3"] {
+  padding: 25px 0 0;
 }
-#totalProducts > table > tbody > tr#totalProductsOption > td:first-child {
-  border-top: 0;
-  padding: 0;
+
+#totalProducts .xans-product-option,
+#totalProducts .xans-product-option tr,
+#totalProducts tr.xans-product-addoption {
+  display: table-row;
 }
-#totalProducts table tr.add_product > td {
-  padding: 0;
+
+#totalProducts .xans-product-option th,
+#totalProducts .xans-product-option td {
+  display: table-cell;
 }
-#totalProducts table tr.add_product > td > table tr.option > td:first-child {
-  padding: 0;
-}
-#totalProducts table tr.add_product > td > table tr:first-child td {
+
+#totalProducts tbody tr.xans-product-addoption th,
+#totalProducts tbody tr.xans-product-addoption td {
   border-top: 0;
 }
 
-/* 총 상품 금액 */
-.totalPrice {
-  margin: 10px 0 0;
-  padding: 34px 8px 19px;
-  border-top: 1px solid #eee;
-  color: #222;
-  font-size: 14px;
+#totalProducts > table > tbody > tr#totalProductsOption > td:first-child {
+  border-top: 0px solid #fff;
+  padding: 0;
+}
+
+#totalProducts tbody tr.xans-product-addoption > th {
+  width: 100%;
+  display: block;
+  padding: 10px 0 0;
+}
+
+#totalProducts tbody tr.xans-product-addoption > td {
+  padding: 10px 0;
+  display: block;
+}
+
+#totalProducts tr.add_product {
+  border-top: 0px solid #e5e5e5;
+}
+
+#totalProducts tr.add_product > td {
+  padding-right: 0;
+}
+
+#totalProducts tr.add_product > td > table tr.option > td {
+  border-top: 1px solid #e5e5e5;
+}
+
+#totalProducts tr.add_product > td > table tr.option > td:first-child {
+  padding: 0;
+}
+
+#totalProducts tr.add_product > td > table tr:first-child th,
+#totalProducts tr.add_product > td > table tr:first-child td {
+  border-top: 0;
+}
+
+#totalProducts tr.add_product > td > table td .delete {
+  right: 0;
+}
+
+#totalProducts tr.add_product > td > table td.right {
+  padding-right: 24px;
+}
+
+#totalProducts table .right {
+  text-align: left;
+  font-size: 14px !important;
+}
+
+#totalProducts > table > tbody > tr#totalProductsOption > td:first-child {
+  border-top: 5px solid #fff;
+  padding: 0;
+}
+
+#totalProducts tbody td,
+#totalProducts > table > tbody > tr:first-child > td {
+  border: 0;
+  padding: 0 15px;
+}
+
+#totalProducts > table > tbody > tr > td:first-child {
+  padding: 14px 14px;
+  display: block;
+}
+
+#totalProducts tbody > tr > td:nth-child(2) {
+  display: inline-block;
+  width: 50%;
   vertical-align: middle;
-  background: #fff;
+}
+
+#totalProducts tbody > tr > td:nth-child(3) {
+  text-align: right;
+  display: inline-block;
+  width: 50%;
+  vertical-align: middle;
+}
+
+#totalProducts tbody td.right,
+#totalProducts > table > tbody > tr:first-child > td.right {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 0;
+  padding: 10px 15px;
+}
+
+#totalProducts tbody td.right span {
+  vertical-align: middle;
+}
+
+#totalProducts > table > tbody > tr.option_product {
+  display: block;
+}
+
+#totalProducts tbody td.right .mileage {
+  font-weight: normal;
+  margin-left: 3px;
+  font-size: 12px;
+}
+
+#totalProducts > table > tbody > tr.option_product > td.right {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
   text-align: right;
 }
-.totalPrice .total {
-  color: #000;
-}
-.totalPrice .total em {
-  font-style: normal;
-  font-size: 21px;
+
+#totalProducts > table > tbody > tr.option_product > td:nth-child(2).right,
+#totalProducts > table > tbody > tr.add_product > td:nth-child(2).right,
+#totalProducts > table > tbody > tr.option_product > td:nth-child(3).right {
+  bottom: 5px;
+  font-size: 0;
 }
 
+#totalProducts > table > tbody > tr.option_product > td:nth-child(3) {
+  text-align: right;
+}
+
+#totalProducts > table > tbody > tr.option_product > td:nth-child(3).center,
+#totalProducts > table > tbody > tr.add_product > td:nth-child(3).center {
+  display: block;
+  padding: 0;
+}
+
+#totalProducts > table > tbody > tr > td:first-child,
+#totalProducts > table > tbody > tr > td p.product,
+#totalProducts > table > tbody > tr.option_product > td > p.product {
+  color: #000;
+  font-size: 14px;
+}
+
+#totalProducts > table > tbody > tr > td p.product,
+#totalProducts > table > tbody > tr.option_product > td > p.product {
+  padding-bottom: 0px;
+  padding-right: 25px;
+}
+
+#totalProducts > table > tbody > tr.add_product > td > p.product {
+  padding-bottom: 10px;
+  padding-right: 25px;
+}
+
+#totalProducts > table > tbody > tr.add_product > td > p.product {
+  padding-top: 14px;
+}
+
+#totalProducts > table > tbody > tr.option_product > td > p.product + p,
+#totalProducts > table > tbody > tr.add_product > td > p.product + p {
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+#totalProducts > table > tbody > tr p.product strong,
+#totalProducts > table > tbody > tr.option_product > td > p.product strong,
+#totalProducts > table > tbody > tr.add_product > td > p.product strong {
+  font-weight: normal;
+}
+
+#totalProducts > table > tbody > tr.option_product > td > table,
+#totalProducts > table > tbody > tr.option_product > td > table tbody,
+#totalProducts > table > tbody > tr.option_product > td > table tr {
+  display: block;
+  width: 100%;
+}
+
+#totalProducts > table > tbody > tr.option_product > td > table td {
+  padding: 0 1px;
+}
+
+#totalProducts > table > tbody > tr.option_product > td > table td:first-child {
+  padding-bottom: 10px;
+}
+
+#totalProducts > table > tbody > tr.option_product > td > table td.right {
+  padding: 10px 0;
+}
+
+#totalProducts > table > tbody > tr.option_product > td > table td .delete {
+  right: 0;
+  margin-top: 0;
+}
+
+#totalProducts > table > tbody > tr.option_product > td .option {
+  display: block;
+}
+
+#totalProducts > table > tbody > tr.option_product > td .option > td {
+  width: 100vw;
+}
+
+#totalProducts > table > tbody > tr.add_product > td,
+#totalProducts > table > tbody > tr.add_product > td:first-child {
+  padding: 0 15px;
+}
+
+#totalProducts > table > tbody > tr.add_product > td .product {
+  padding-right: 15px;
+}
+
+#totalProducts > table > tbody > tr.add_product > td.right {
+  padding: 10px 15px;
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  text-align: right;
+}
+
+#totalProducts .quantity {
+  padding-bottom: 10px;
+}
+
+#totalProducts tr.option > td > table th,
+#totalProducts tr.option > td > table td {
+  display: block;
+  width: 100%;
+  font-size: 13px;
+}
+
+#totalProducts tr.option > td > table th {
+  padding-top: 10px;
+}
+
+#totalProducts tr.option .xans-product-addoption > td {
+  padding: 0 0 10px;
+}
+
+#totalProducts tr.option > td > table td {
+  padding: 0 0 10px;
+}
+
+#totalProducts tr.add_product > td > table tr:first-child th,
+#totalProducts tr.add_product > td > table tr:first-child td {
+  width: 100%;
+}
+
+#totalProducts tbody tr.xans-product-addoption > th {
+  padding: 0.7rem 0;
+}
+
+#totalProducts tbody td .mileage {
+  display: inline-block;
+}
+
+#totalProducts p.product span {
+  font-size: 13px;
+}
+
+#totalProducts tbody > tr.add_product table > tbody > tr > td {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#totalProducts tbody > tr.add_product table > tbody > tr > td:first-child {
+  padding: 10px 0;
+  display: block;
+}
+
+#totalProducts tbody > tr.add_product table > tbody > tr > td:nth-child(2) {
+  display: inline-block;
+  width: 50%;
+  vertical-align: middle;
+  z-index: 1;
+}
+
+#totalProducts tbody > tr.add_product table > tbody > tr > td:nth-child(3) {
+  text-align: right;
+  display: inline-block;
+  width: 50%;
+  vertical-align: middle;
+  padding: 0;
+}
+
+#totalProducts tbody > tr.add_product table > tbody > tr > td.right {
+  padding: 10px 0;
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  text-align: right;
+}
+
+#totalProducts tbody > tr.add_product .xans-product-addoption td {
+  width: 100% !important;
+}
+/* 총 상품 금액 */
+#totalPrice {
+  display: flex;
+  justify-content: space-between;
+  color: #000;
+  vertical-align: middle;
+}
+
+#totalPrice .qty {
+  color: #7d7d7d;
+  font-weight: normal;
+  font-size: 0;
+}
+
+#totalPrice .total {
+  color: #7d7d7d;
+  font-size: 13px;
+}
+
+#totalPrice .total strong {
+  color: #000 !important;
+  margin-right: 5px;
+}
+
+#totalPrice .total em {
+  font-style: normal;
+}
+#totalPrice .total strong {
+  font-size: 20px;
+  margin-top: -3px;
+}
+
+#totalPrice .title {
+  font-size: 15px;
+  font-weight: normal;
+  margin-right: 8px;
+}
+
+#totalPrice .title,
+#totalPrice .title *,
+#totalPrice .total,
+#totalPrice .total * {
+  height: 25px;
+  line-height: 25px;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
 /* 배송비 차등부과 레이어 */
 .differentialShipping {
   display: none;
@@ -1363,4 +2044,16 @@
 }
 #checkoutContainer.__checkout_buy_container {
   width: 100% !important;
+}
+
+.xans-product-detail .xans-product-detaildesign .product_name_css,
+.xans-product-detail .xans-product-detaildesign .product_custom_css,
+.xans-product-detail .xans-product-detaildesign .product_price_css,
+.xans-product-detail .xans-product-detaildesign .prd_optimal_discount_css,
+.xans-product-detail .xans-product-detaildesign .prd_price_sale_css,
+.xans-product-detail .xans-product-detaildesign .summary_desc_css,
+.xans-product-detail .xans-product-detaildesign .simple_desc_css,
+.xans-product-detail .xans-product-detaildesign .review_cnt_css,
+.xans-product-detail .xans-product-detaildesign .prd_promotion_date_css {
+  display: none;
 }
