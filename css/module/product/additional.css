@@ -3,6 +3,9 @@
   height: auto !important;
 }
 
+#prdReview .menu {
+  margin: 80px 0 16px;
+}
 .xans-product-additional .ec-base-tab .menu {
   margin: 24px 0 16px;
   border: 0;
@@ -11,14 +14,16 @@
 }
 .xans-product-additional .cont {
   padding: 24px 8px;
-  color: #555;
-  line-height: 24px;
+  color: #919191;
+  font-size: 13px;
+  line-height: 22px;
+  /* line-height: 24px; */
 }
 .xans-product-additional .cont h3 {
   margin: 0 0 16px;
-  color: #555;
+  color: #000;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: bold;
 }
 
 /* 추가 */
@@ -71,8 +76,9 @@
 /* 상품구매안내 */
 #prdInfo .infoBox {
   width: 100%;
-  border-bottom: 1px solid #eee;
+  /* border-bottom: 1px solid #eee; */
   font-size: 13px;
+  margin-top: 60px;
 }
 #prdInfo .infoBox:last-child {
   border-bottom: 0;
@@ -105,6 +111,7 @@
 /* 상세정보리뉴얼 */
 #prdInfo .infoBox .cont {
   margin-bottom: 10px;
+  border-top: 2px solid #c1c1c1;
 }
 
 #prdInfo .infoBox .toggle {
@@ -115,14 +122,20 @@
 }
 
 #prdInfo .infoBox .arrow {
-  font-size: 12px;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-left: 1px solid #000;
+  border-bottom: 1px solid #000;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
   transition: transform 0.3s ease;
 }
 
 #prdInfo .infoBox .content {
   display: none; /* 기본적으로 숨김 */
   padding: 10px 0;
-  border-top: 1px solid #ddd;
+  /* border-top: 1px solid #ddd; */
 }
 
 #prdInfo .infoBox .cont.open .content {
@@ -130,7 +143,7 @@
 }
 
 #prdInfo .infoBox .cont.open .arrow {
-  transform: rotate(180deg); /* 화살표 반전 */
+  transform: rotate(135deg); /* 화살표 반전 */
 }
 
 /* 상품 게시판 */
@@ -163,6 +176,16 @@
   padding: 16px 19px 0;
   line-height: 18px;
   text-align: left;
+}
+.xans-product-additional div.board .ec-base-button .gCenter .btnEm {
+  border: 1px solid #000;
+  color: #000;
+  background-color: transparent;
+}
+.xans-product-additional div.board .ec-base-button .gCenter a {
+  border-radius: 10px;
+  padding: 15px 70px;
+  font-size: 14px;
 }
 
 #commentWriteForm_4,

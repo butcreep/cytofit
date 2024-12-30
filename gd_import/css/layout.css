@@ -234,7 +234,7 @@
 
 [class*="header-icons"] {
   display: flex;
-  gap: 15px;
+  gap: 20px;
   align-items: center;
 }
 
@@ -252,21 +252,21 @@
   filter: invert(100%);
   cursor: pointer;
 }
-.search {
-  width: 29px;
-  height: 29px;
+[class*="header-icons"] .search {
+  width: 25px;
+  height: 25px;
   background-image: url("//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/asset/icons/search.svg");
 }
 
-.mypage {
-  width: 30px;
-  height: 37px;
+[class*="header-icons"] .mypage {
+  width: 26px;
+  height: 32px;
   background-image: url("//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/asset/icons/login.svg");
 }
 
-.cart {
-  width: 23px;
-  height: 29px;
+[class*="header-icons"] .cart {
+  width: 19px;
+  height: 25px;
   background-image: url("//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/asset/icons/shop.svg");
 }
 
@@ -282,13 +282,13 @@
 
 [class*="header-icons"] .cart .count {
   position: absolute;
-  top: 1px;
+  top: -1px;
   right: -6px;
   background-color: #000;
   color: #ffffff;
   font-size: 10px;
   font-weight: bold;
-
+  line-height: 16px;
   border-radius: 50%;
   width: 15px;
   height: 15px;
@@ -1520,8 +1520,7 @@
 .footer-container {
   /* max-width: 1650px;
     margin: 0 auto; */
-  width: 100%;
-  max-width: 1700px;
+  width: 92%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;

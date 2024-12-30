@@ -3,7 +3,9 @@
   margin: 0 auto;
   padding: 0;
 }
-.xans-product-detail .detailArea {
+.xans-product-detail .xans-product-additional {
+  max-width: 735px;
+  margin: 0 auto;
 }
 .xans-product-detail .detail-wrap {
   position: relative;
@@ -22,6 +24,8 @@
 }
 .detail-wrap .detail-left {
   width: calc(100% - 530px);
+  /* max-width: 735px; */
+  margin: 0 50px 0 0;
 }
 .detail-wrap .detail-right {
   width: 500px;
@@ -136,6 +140,7 @@
   text-decoration: none;
   transition: opacity 0.25s ease;
   color: #000;
+  font-weight: bold;
 }
 .xans-product-detail .infoArea .prod_coupon img {
   width: 13px;
@@ -510,15 +515,16 @@
   color: #555;
   font-size: 12px;
   word-break: break-all;
+  display: none;
 }
 .xans-product-detail .infoArea .xans-product-option .value .ec-product-value {
   color: #363437;
 }
 .xans-product-detail .infoArea .xans-product-option .ec-product-button li {
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
   display: inline-block;
-  margin: 0 5px 3px 0;
+  /* margin: 0 5px 3px 0; */
   vertical-align: top;
   border-radius: 100%;
   border: 1px solid #ddd;
@@ -546,12 +552,50 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+.xans-product-detail .infoArea .ec-product-button.ec-product-preview {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
+}
 .xans-product-detail .infoArea .xans-product-option .ec-product-button.ec-product-preview li {
+  width: 100%;
+  height: 124px;
+  background: transparent;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+}
+div.xans-product-detail .infoArea .ec-product-button.ec-product-preview li:nth-of-type(4):after {
+  position: absolute;
+  bottom: -1.8vw;
+  right: 0;
+  content: "";
+  background: url(//ecimg.cafe24img.com/pg936b04936666056/cytofit/web/upload/asset/icons/benefit.svg) no-repeat;
+  background-size: 9vw 1.4vw;
+  width: 9vw;
+  height: 1.4vw;
+  animation: planBanner 0.8s infinite;
+}
+@keyframes planBanner {
+  0% {
+    bottom: -1.8vw;
+  }
+
+  20% {
+    bottom: -2.1vw;
+  }
+
+  40% {
+    bottom: -1.8vw;
+  }
 }
 .xans-product-detail .infoArea .xans-product-option .ec-product-button.ec-product-preview li a {
-  min-width: 20px;
+  /* min-width: 20px;
   width: 20px;
-  height: 20px;
+  height: 20px; */
+  width: 100%;
+  height: 100%;
 }
 .xans-product-detail .infoArea .xans-product-option .ec-product-button.ec-product-preview li a img {
   max-width: 100%;
@@ -599,7 +643,7 @@
   background: #fff;
 }
 .xans-product-detail .infoArea .xans-product-option .ec-product-button .ec-product-selected {
-  border: 2px solid #495164;
+  border: 2px solid #495164 !important;
 }
 .xans-product-detail .infoArea .xans-product-option .ec-product-button .ec-product-selected a {
   margin: -1px;
@@ -713,6 +757,15 @@
 }
 .xans-product-detail .infoArea .xans-product-action .ec-base-button .btnBlack:first-child {
   border-radius: 10px 0 0 10px;
+  position: relative;
+}
+.xans-product-detail .infoArea .xans-product-action .ec-base-button .btnBlack:first-child::after {
+  content: "";
+  width: 0.8px;
+  height: 20px;
+  background: #fff;
+  position: absolute;
+  right: 0;
 }
 .xans-product-detail .infoArea .xans-product-action .ec-base-button .btnBlack:nth-child(2) {
   border-radius: 0 10px 10px 0;
@@ -1589,7 +1642,7 @@
 }
 
 #totalProducts .quantity {
-  padding-bottom: 10px;
+  padding-bottom: 15px;
 }
 
 #totalProducts tr.option > td > table th,

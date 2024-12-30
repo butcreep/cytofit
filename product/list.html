@@ -2,7 +2,7 @@
 <div module="Product_menupackage">
   <!--@css(/css/module/product/menupackage.css)-->
   <!--@js(/js/module/product/menucategory.js)-->
-  <div class="path" module="product_headcategory">
+  <div class="path displaynone" module="product_headcategory">
     <span>현재 위치</span>
     <ol>
       <li><a href="/">홈</a></li>
@@ -115,7 +115,7 @@
 					$compare_page = /product/compare.html
 			-->
 
-    <div class="function" id="{$listmenu_position}">
+    <div class="function displaynone" id="{$listmenu_position}">
       <p class="prdCount">등록 제품 : <strong>{$total_count}</strong>개</p>
       <ul id="type" module="product_Orderby">
         <li><a href="{$param}" {$style}>{$sort_name}</a></li>

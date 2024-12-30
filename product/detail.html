@@ -66,71 +66,6 @@
 
       <div module="product_additional">
         <!--@css(/css/module/product/additional.css)-->
-        <div id="prdDetail" class="ec-base-tab gFlex">
-          <ul class="menu">
-            <li class="{$review_display|display}">
-              <a href="#prdReview">상품사용후기<span class="review_count">( {$review_count} )</span></a>
-            </li>
-            <li class="selected"><a href="#prdDetail">상품상세정보</a></li>
-            <li><a href="#prdInfo">상품구매안내</a></li>
-            <li class="{$qna_display|display}"><a href="#prdQnA">상품Q&amp;A</a></li>
-            <!-- <li><a href="#prdRelated">관련상품</a></li> -->
-          </ul>
-          <div class="cont">
-            <!--h3>[ 상품상세정보 ]</h3-->
-            {$product_detail}
-          </div>
-        </div>
-
-        <div id="prdInfo" class="ec-base-tab gFlex">
-          <ul class="menu">
-            <li class="{$review_display|display}">
-              <a href="#prdReview">상품사용후기<span class="review_count">( {$review_count} )</span></a>
-            </li>
-            <li><a href="#prdDetail">상품상세정보</a></li>
-            <li class="selected"><a href="#prdInfo">상품구매안내</a></li>
-            <li class="{$qna_display|display}"><a href="#prdQnA">상품Q&amp;A</a></li>
-          </ul>
-          <div class="infoBox">
-            <div class="cont open">
-              <h3 class="toggle">
-                [ 상품결제정보 ]
-                <span class="arrow">▼</span>
-              </h3>
-              <div class="content">{$payment_info}</div>
-            </div>
-            <div class="cont open">
-              <h3 class="toggle">
-                [ 배송정보 ]
-                <span class="arrow">▼</span>
-              </h3>
-              <div class="content">
-                <ul class="delivery">
-                  <li>배송 방법 : {$shipping_method}</li>
-                  <li>배송 지역 : {$shipping_area}</li>
-                  <li>배송 비용 : {$shipping_fee}</li>
-                  <li>배송 기간 : {$shipping_period}</li>
-                  <li>배송 안내 : {$shipping_info}</li>
-                </ul>
-              </div>
-            </div>
-            <div class="cont open">
-              <h3 class="toggle">
-                [ 서비스문의 ]
-                <span class="arrow">▼</span>
-              </h3>
-              <div class="content">{$service_info}</div>
-            </div>
-            <div class="cont open">
-              <h3 class="toggle">
-                [ 교환 및 반품정보 ]
-                <span class="arrow">▼</span>
-              </h3>
-              <div class="content">{$exchange_info}</div>
-            </div>
-          </div>
-        </div>
-
         <div id="prdReview" class="ec-base-tab gFlex {$review_display|display}">
           <ul class="menu">
             <li class="selected">
@@ -252,6 +187,69 @@
             </div>
           </div>
         </div>
+        <div id="prdDetail" class="ec-base-tab gFlex">
+          <ul class="menu">
+            <li class="{$review_display|display}">
+              <a href="#prdReview">상품사용후기<span class="review_count">( {$review_count} )</span></a>
+            </li>
+            <li class="selected"><a href="#prdDetail">상품상세정보</a></li>
+            <li><a href="#prdInfo">상품구매안내</a></li>
+            <li class="{$qna_display|display}"><a href="#prdQnA">상품Q&amp;A</a></li>
+            <!-- <li><a href="#prdRelated">관련상품</a></li> -->
+          </ul>
+          <div class="cont">
+            <!--h3>[ 상품상세정보 ]</h3-->
+            {$product_detail}
+          </div>
+        </div>
+        <div id="prdInfo" class="ec-base-tab gFlex">
+          <ul class="menu">
+            <li class="{$review_display|display}">
+              <a href="#prdReview">상품사용후기<span class="review_count">( {$review_count} )</span></a>
+            </li>
+            <li><a href="#prdDetail">상품상세정보</a></li>
+            <li class="selected"><a href="#prdInfo">상품구매안내</a></li>
+            <li class="{$qna_display|display}"><a href="#prdQnA">상품Q&amp;A</a></li>
+          </ul>
+          <div class="infoBox">
+            <div class="cont open">
+              <h3 class="toggle">
+                상품결제정보
+                <span class="arrow"></span>
+              </h3>
+              <div class="content">{$payment_info}</div>
+            </div>
+            <div class="cont open">
+              <h3 class="toggle">
+                배송정보
+                <span class="arrow"></span>
+              </h3>
+              <div class="content">
+                <ul class="delivery">
+                  <li>배송 방법 : {$shipping_method}</li>
+                  <li>배송 지역 : {$shipping_area}</li>
+                  <li>배송 비용 : {$shipping_fee}</li>
+                  <li>배송 기간 : {$shipping_period}</li>
+                  <li>배송 안내 : {$shipping_info}</li>
+                </ul>
+              </div>
+            </div>
+            <div class="cont open">
+              <h3 class="toggle">
+                서비스문의
+                <span class="arrow"></span>
+              </h3>
+              <div class="content">{$service_info}</div>
+            </div>
+            <div class="cont open">
+              <h3 class="toggle">
+                교환 및 반품정보
+                <span class="arrow"></span>
+              </h3>
+              <div class="content">{$exchange_info}</div>
+            </div>
+          </div>
+        </div>
 
         <div id="prdQnA" class="ec-base-tab gFlex {$qna_display|display}">
           <ul class="menu">
@@ -336,9 +334,9 @@
             </div>
 
             <p class="ec-base-button typeBorder">
-              <span class="gRight">
-                <a href="{$qna_write}" class="btnNormal sizeS">상품문의하기</a>
-                <a href="{$qna_list}" class="btnNormal sizeS">모두 보기</a>
+              <span class="gCenter">
+                <a href="{$qna_write}" class="btnBlack sizeL">문의 작성</a>
+                <a href="{$qna_list}" class="btnEm sizeL">모두 보기</a>
               </span>
             </p>
 
